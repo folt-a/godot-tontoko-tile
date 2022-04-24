@@ -31,17 +31,17 @@ Tontoko Tile is Godot TileSet make tool.
 
 ---
 
-![help_01_tab](C:/godot/tontoko_tile/addons/tontoko_tileset/help/help_01_tab.webp)
+![help_01_tab](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/help_01_tab.webp)
 
 上部ワークスペースに TontokoTile が追加されています。
 
 
 
-![image-20220424214851811](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424214851811.png)
+![image-20220424214851811](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424214851811.png)
 
 **※「タイル設定」のCellSizeを設定する**
 
-![image-20220424220127102](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424220127102.png)
+![image-20220424220127102](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424220127102.png)
 
 追加する画像の種類を選択します。
 
@@ -49,7 +49,7 @@ Tontoko Tile is Godot TileSet make tool.
 
 「画像選択」で画像追加します。
 
-![image-20220424223609763](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424223609763.png)
+![image-20220424223609763](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424223609763.png)
 
 マークをつけて通行設定をします。
 
@@ -57,26 +57,26 @@ Tontoko Tile is Godot TileSet make tool.
 
 複数シングルタイル化やオートタイル化をします。
 
-![help_04_canvassetting](C:/godot/tontoko_tile/addons/tontoko_tileset/help/help_04_canvassetting.webp)
+![help_04_canvassetting](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/help_04_canvassetting.webp)
 
 出力するマス範囲を「キャンバスサイズ」で設定します。
 
-![help_03_footer](C:/godot/tontoko_tile/addons/tontoko_tileset/help/help_03_footer.webp)
+![help_03_footer](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/help_03_footer.webp)
 
 出力パスを指定して「出力！」ボタンを押します。
 
-![image-20220424221006149](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424221006149.png)
+![image-20220424221006149](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424221006149.png)
 
 tresファイル、画像ファイルが作成されます。
 
 # タイル設定
 
-![help_03_footer](C:/godot/tontoko_tile/addons/tontoko_tileset/help/help_03_footer.webp)
+![help_03_footer](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/help_03_footer.webp)
 
 下部にタイル設定があります。
 
 - タイル設定ボタン
-  - ![image-20220424214851811](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424214851811.png)
+  - ![image-20220424214851811](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424214851811.png)
 - 各マークに対応するZindexの設定
 - キャンバス背景は透明で出力するかどうか
 - TileSet、出力PNG画像の出力パス（res:// 形式か、OSファイルパス形式かどちらでもOK）
@@ -84,7 +84,7 @@ tresファイル、画像ファイルが作成されます。
 
 # 画像追加
 
-![image-20220424221304508](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424221304508.png)
+![image-20220424221304508](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424221304508.png)
 
 - 「画像選択」　追加するタイル画像を選択します。
 
@@ -105,7 +105,7 @@ tresファイル、画像ファイルが作成されます。
 
 #### キャンバス上の画像・マーク選択のやり方
 
-![image-20220424221647185](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424221647185.png)を選択すると画像を、![image-20220424221705395](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424221705395.png)を選択するとマークが対象になります。
+![image-20220424221647185](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424221647185.png)を選択すると画像を、![image-20220424221705395](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424221705395.png)を選択するとマークが対象になります。
 
 ズーム：Ctrl+マウスホイール　または左上の+-ボタン
 
@@ -119,7 +119,7 @@ tresファイル、画像ファイルが作成されます。
 
 ズーム中はキャンバス線の表示が消えます。100%にすると表示されます。
 
-![help_06_canvas](C:/godot/tontoko_tile/addons/tontoko_tileset/help/help_06_canvas.webp)
+![help_06_canvas](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/help_06_canvas.webp)
 
 選択中のタイルには色が付きます。選択したタイルの種類によって色は変わります。
 
@@ -129,7 +129,7 @@ tresファイル、画像ファイルが作成されます。
 
 ## キャンバス上部メニュー
 
-![help_04_canvassetting](C:/godot/tontoko_tile/addons/tontoko_tileset/help/help_04_canvassetting.webp)
+![help_04_canvassetting](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/help_04_canvassetting.webp)
 
 - キャンバスサイズの指定をマス/ピクセルにする
 - キャンバスサイズ
@@ -141,7 +141,7 @@ tresファイル、画像ファイルが作成されます。
 
 # ボタン・マーク説明
 
-![image-20220424223306555](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424223306555.png)
+![image-20220424223306555](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424223306555.png)
 
 **マークは、ドラッグでまとめてマークできます。**
 
@@ -149,7 +149,7 @@ tresファイル、画像ファイルが作成されます。
 
 #### 画像移動
 
-![image-20220424221647185](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424221647185.png)
+![image-20220424221647185](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424221647185.png)
 
 ショートカットキー：Q
 
@@ -157,7 +157,7 @@ tresファイル、画像ファイルが作成されます。
 
 #### マーク移動
 
-![image-20220424221705395](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424221705395.png)
+![image-20220424221705395](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424221705395.png)
 
 ショートカットキー：W
 
@@ -167,7 +167,7 @@ tresファイル、画像ファイルが作成されます。
 
 #### 丸マーク
 
-![image-20220424222231312](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424222231312.png)
+![image-20220424222231312](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424222231312.png)
 
 ショートカットキー：１
 
@@ -175,7 +175,7 @@ tresファイル、画像ファイルが作成されます。
 
 #### バツマーク
 
-![image-20220424222240755](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424222240755.png)
+![image-20220424222240755](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424222240755.png)
 
 ショートカットキー：２
 
@@ -183,7 +183,7 @@ tresファイル、画像ファイルが作成されます。
 
 #### 星マーク
 
-![image-20220424222253236](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424222253236.png)
+![image-20220424222253236](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424222253236.png)
 
 ショートカットキー：３
 
@@ -193,7 +193,7 @@ tresファイル、画像ファイルが作成されます。
 
 #### 星マーク２
 
-![image-20220424222304900](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424222304900.png)
+![image-20220424222304900](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424222304900.png)
 
 ショートカットキー：４
 
@@ -203,7 +203,7 @@ tresファイル、画像ファイルが作成されます。
 
 #### 三角マーク
 
-![image-20220424222314035](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424222314035.png)
+![image-20220424222314035](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424222314035.png)
 
 ショートカットキー：５
 
@@ -211,7 +211,7 @@ tresファイル、画像ファイルが作成されます。
 
 #### 詳細バツマーク
 
-![image-20220424222332572](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424222332572.png)![image-20220424222404595](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424222404595.png)
+![image-20220424222332572](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424222332572.png)![image-20220424222404595](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424222404595.png)
 
 ショートカットキー：６
 
@@ -225,7 +225,7 @@ tresファイル、画像ファイルが作成されます。
 
 #### 消しゴム
 
-![image-20220424222508571](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424222508571.png)
+![image-20220424222508571](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424222508571.png)
 
 ショートカットキー：E
 
@@ -235,7 +235,7 @@ tresファイル、画像ファイルが作成されます。
 
 #### マスカーソル
 
-![image-20220424222521819](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424222521819.png)
+![image-20220424222521819](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424222521819.png)
 
 ショートカットキー：C
 
@@ -253,7 +253,7 @@ tresファイル、画像ファイルが作成されます。
 
 #### 移動ロック
 
-![image-20220424222636347](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424222636347.png)
+![image-20220424222636347](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424222636347.png)
 
 ショートカットキー：Ｌ
 
@@ -261,7 +261,7 @@ tresファイル、画像ファイルが作成されます。
 
 #### シングルタイル化
 
-![image-20220424222645315](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424222645315.png)
+![image-20220424222645315](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424222645315.png)
 
 ショートカットキー：Ｓ
 
@@ -271,7 +271,7 @@ tresファイル、画像ファイルが作成されます。
 
 #### オートタイル化
 
-![image-20220424222656139](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424222656139.png)
+![image-20220424222656139](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424222656139.png)
 
 ショートカットキー：Ａ
 
@@ -281,11 +281,8 @@ tresファイル、画像ファイルが作成されます。
 
 #### 削除
 
-![image-20220424222804699](C:/godot/tontoko_tile/addons/tontoko_tileset/help/image-20220424222804699.png)
+![image-20220424222804699](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424222804699.png)
 
 ショートカットキー：なし
 
 選択中の画像またはマークを削除します。
-
-
-
