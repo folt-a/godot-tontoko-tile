@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="24"
+   height="24"
+   viewBox="0 0 24 24"
+   version="1.1"
+   xml:space="preserve"
+   style="clip-rule:evenodd;fill-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"
+   id="svg1645"
+   sodipodi:docname="batu-empty-24.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs1649" /><sodipodi:namedview
+   id="namedview1647"
+   pagecolor="#505050"
+   bordercolor="#eeeeee"
+   borderopacity="1"
+   inkscape:pageshadow="0"
+   inkscape:pageopacity="0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   width="32px"
+   lock-margins="false"
+   fit-margin-top="0.2"
+   fit-margin-left="0.2"
+   fit-margin-right="0.2"
+   fit-margin-bottom="0.2"
+   inkscape:zoom="26.53125"
+   inkscape:cx="8.4617198"
+   inkscape:cy="12.871614"
+   inkscape:window-width="2560"
+   inkscape:window-height="1362"
+   inkscape:window-x="1200"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg1645" />
+    
+<path
+   d="M 2,16.999999 C 2,19.760417 4.2385417,22 7.0000002,22 H 16.999999 C 19.760417,22 22,19.760417 22,16.999999 V 7 C 22,4.2395834 19.760417,2 16.999999,2 H 7.0000002 C 4.2385417,2 2,4.2395834 2,7 Z m 1.6666667,0 V 7 c 0,-1.8437499 1.4927081,-3.3333333 3.3333335,-3.3333333 h 9.9999988 c 1.843751,0 3.333334,1.4895834 3.333334,3.3333333 v 9.999999 c 0,1.843751 -1.489583,3.333335 -3.333334,3.333335 H 7.0000002 c -1.8406254,0 -3.3333334,-1.489584 -3.3333335,-3.333335 z"
+   style="clip-rule:evenodd;fill:#ffffff;fill-rule:nonzero;stroke-width:0.104167;stroke-linejoin:round;stroke-miterlimit:2"
+   id="path1773"
+   sodipodi:nodetypes="ssssssssssssssssss" /></svg>

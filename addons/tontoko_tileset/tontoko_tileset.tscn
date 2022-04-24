@@ -1,0 +1,1949 @@
+[gd_scene load_steps=73 format=2]
+
+[ext_resource path="res://addons/tontoko_tileset/tontoko_tileset.gd" type="Script" id=2]
+[ext_resource path="res://addons/tontoko_tileset/tontoko_graph_edit.gd" type="Script" id=3]
+[ext_resource path="res://addons/tontoko_tileset/tontoko_graph_edit_mark.gd" type="Script" id=4]
+[ext_resource path="res://addons/tontoko_tileset/tontoko_graph_node_image.gd" type="Script" id=5]
+[ext_resource path="res://addons/tontoko_tileset/images/arrow-pointer-maru.svg" type="Texture" id=6]
+[ext_resource path="res://addons/tontoko_tileset/images/plus.svg" type="Texture" id=7]
+[ext_resource path="res://addons/tontoko_tileset/images/trash.svg" type="Texture" id=8]
+[ext_resource path="res://addons/tontoko_tileset/images/image.svg" type="Texture" id=9]
+[ext_resource path="res://addons/tontoko_tileset/images/square-a.svg" type="Texture" id=10]
+[ext_resource path="res://addons/tontoko_tileset/images/square-dashed.svg" type="Texture" id=11]
+[ext_resource path="res://addons/tontoko_tileset/images/gears.svg" type="Texture" id=12]
+[ext_resource path="res://addons/tontoko_tileset/images/hoshi.svg" type="Texture" id=13]
+[ext_resource path="res://addons/tontoko_tileset/images/sankaku.svg" type="Texture" id=14]
+[ext_resource path="res://addons/tontoko_tileset/images/grid-2-plus.svg" type="Texture" id=15]
+[ext_resource path="res://addons/tontoko_tileset/images/lock.svg" type="Texture" id=16]
+[ext_resource path="res://addons/tontoko_tileset/images/maru.svg" type="Texture" id=17]
+[ext_resource path="res://addons/tontoko_tileset/tontoko_graph_edit_paint.gd" type="Script" id=18]
+[ext_resource path="res://addons/tontoko_tileset/images/batu.svg" type="Texture" id=19]
+[ext_resource path="res://addons/tontoko_tileset/images/keshigomu.svg" type="Texture" id=20]
+[ext_resource path="res://addons/tontoko_tileset/images/eye.svg" type="Texture" id=21]
+[ext_resource path="res://addons/tontoko_tileset/option_popup_theme.tres" type="Theme" id=22]
+[ext_resource path="res://addons/tontoko_tileset/tool_buttongroup.tres" type="ButtonGroup" id=23]
+[ext_resource path="res://addons/tontoko_tileset/fonts/ZenMaruGothic-Bold-Subset.ttf" type="DynamicFontData" id=24]
+[ext_resource path="res://addons/tontoko_tileset/cursor_graph_node_styleboxflat.tres" type="StyleBox" id=25]
+[ext_resource path="res://addons/tontoko_tileset/graph_theme.tres" type="Theme" id=26]
+[ext_resource path="res://addons/tontoko_tileset/pressed_tool_button_styleboxflat.tres" type="StyleBox" id=27]
+[ext_resource path="res://addons/tontoko_tileset/images/hoshi2.svg" type="Texture" id=28]
+[ext_resource path="res://addons/tontoko_tileset/fonts/ZenMaruGothic-Bold-Subset-Small.tres" type="DynamicFont" id=29]
+[ext_resource path="res://addons/tontoko_tileset/tontoko_batu_grid.gd" type="Script" id=30]
+[ext_resource path="res://addons/tontoko_tileset/tontoko_batu_grid_button.gd" type="Script" id=31]
+[ext_resource path="res://addons/tontoko_tileset/images/grid-batu.svg" type="Texture" id=32]
+[ext_resource path="res://addons/tontoko_tileset/images/arrow-pointer-image.svg" type="Texture" id=33]
+[ext_resource path="res://addons/tontoko_tileset/tontoko_help.tscn" type="PackedScene" id=34]
+[ext_resource path="res://addons/tontoko_tileset/images/circle-w-24.svg" type="Texture" id=35]
+[ext_resource path="res://addons/tontoko_tileset/images/tile-24.svg" type="Texture" id=36]
+[ext_resource path="res://addons/tontoko_tileset/images/circle-r-24.svg" type="Texture" id=37]
+[ext_resource path="res://addons/tontoko_tileset/fonts/h3.tres" type="DynamicFont" id=38]
+
+[sub_resource type="DynamicFont" id=4]
+size = 22
+extra_spacing_top = -8
+extra_spacing_bottom = -8
+font_data = ExtResource( 24 )
+
+[sub_resource type="InputEventKey" id=36]
+scancode = 81
+
+[sub_resource type="ShortCut" id=37]
+shortcut = SubResource( 36 )
+
+[sub_resource type="InputEventKey" id=5]
+scancode = 87
+
+[sub_resource type="ShortCut" id=6]
+shortcut = SubResource( 5 )
+
+[sub_resource type="InputEventKey" id=7]
+scancode = 49
+
+[sub_resource type="ShortCut" id=8]
+shortcut = SubResource( 7 )
+
+[sub_resource type="InputEventKey" id=9]
+scancode = 50
+
+[sub_resource type="ShortCut" id=10]
+shortcut = SubResource( 9 )
+
+[sub_resource type="InputEventKey" id=11]
+scancode = 51
+
+[sub_resource type="ShortCut" id=12]
+shortcut = SubResource( 11 )
+
+[sub_resource type="InputEventKey" id=13]
+scancode = 52
+
+[sub_resource type="ShortCut" id=14]
+shortcut = SubResource( 13 )
+
+[sub_resource type="InputEventKey" id=15]
+scancode = 53
+
+[sub_resource type="ShortCut" id=16]
+shortcut = SubResource( 15 )
+
+[sub_resource type="InputEventKey" id=34]
+scancode = 54
+
+[sub_resource type="ShortCut" id=35]
+shortcut = SubResource( 34 )
+
+[sub_resource type="InputEventKey" id=17]
+scancode = 69
+
+[sub_resource type="ShortCut" id=18]
+shortcut = SubResource( 17 )
+
+[sub_resource type="InputEventKey" id=19]
+scancode = 67
+
+[sub_resource type="ShortCut" id=20]
+shortcut = SubResource( 19 )
+
+[sub_resource type="InputEventKey" id=21]
+scancode = 76
+
+[sub_resource type="ShortCut" id=22]
+shortcut = SubResource( 21 )
+
+[sub_resource type="InputEventKey" id=27]
+scancode = 83
+
+[sub_resource type="ShortCut" id=28]
+shortcut = SubResource( 27 )
+
+[sub_resource type="StyleBoxEmpty" id=33]
+
+[sub_resource type="InputEventKey" id=25]
+scancode = 65
+
+[sub_resource type="ShortCut" id=26]
+shortcut = SubResource( 25 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "animation"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 0.297302, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.784314 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.784314 ) ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=29]
+
+[sub_resource type="GDScript" id=30]
+script/source = "extends GraphNode
+
+func _ready():
+	connect(\"dragged\",self,\"_on_dragged\")
+
+func _on_dragged(from, to):
+	offset = from
+"
+
+[sub_resource type="GDScript" id=31]
+script/source = "extends GraphNode
+
+func _ready():
+	connect(\"dragged\",self,\"_on_dragged\")
+
+func _on_dragged(from, to):
+	offset = from
+"
+
+[sub_resource type="DynamicFont" id=32]
+size = 22
+font_data = ExtResource( 24 )
+
+[node name="tontoko_tilesetTilesetMaker" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 26 )
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1292.0
+margin_bottom = 720.0
+
+[node name="Label" type="Label" parent="Panel"]
+margin_right = 207.0
+margin_bottom = 28.0
+custom_colors/font_color = Color( 0.729412, 0.729412, 0.729412, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "とんとこタイルセット"
+align = 1
+valign = 1
+
+[node name="VBoxC" type="VBoxContainer" parent="."]
+margin_right = 1292.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TabC" type="TabContainer" parent="VBoxC"]
+margin_right = 1292.0
+margin_bottom = 634.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tab_align = 2
+
+[node name="Tile" type="VBoxContainer" parent="VBoxC/TabC"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 42.0
+margin_right = -4.0
+margin_bottom = -4.0
+__meta__ = {
+"_tab_icon": ExtResource( 36 ),
+"_tab_name": "タイルセット"
+}
+
+[node name="Main" type="HBoxContainer" parent="VBoxC/TabC/Tile"]
+margin_right = 1284.0
+margin_bottom = 588.0
+size_flags_vertical = 3
+
+[node name="Images" type="HSplitContainer" parent="VBoxC/TabC/Tile/Main"]
+margin_right = 220.0
+margin_bottom = 588.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="MarginC" type="MarginContainer" parent="VBoxC/TabC/Tile/Main/Images"]
+margin_right = 220.0
+margin_bottom = 588.0
+rect_min_size = Vector2( 220, 0 )
+theme = ExtResource( 26 )
+custom_constants/margin_right = 24
+
+[node name="VBoxC" type="VBoxContainer" parent="VBoxC/TabC/Tile/Main/Images/MarginC"]
+margin_right = 196.0
+margin_bottom = 588.0
+size_flags_horizontal = 7
+size_flags_vertical = 3
+custom_constants/separation = 6
+
+[node name="OptionButtonWorT" type="OptionButton" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC"]
+margin_right = 196.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 0, 28 )
+theme = ExtResource( 22 )
+text = "通常タイル"
+icon = ExtResource( 36 )
+align = 1
+expand_icon = true
+items = [ "通常タイル", ExtResource( 36 ), false, 0, null, "オートタイル ウディタ", ExtResource( 35 ), false, 1, null, "オートタイル ツクール ", ExtResource( 37 ), false, 2, null ]
+selected = 0
+
+[node name="SelectButton" type="Button" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC"]
+margin_top = 34.0
+margin_right = 196.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 0, 28 )
+size_flags_horizontal = 3
+text = "画像選択"
+icon = ExtResource( 9 )
+expand_icon = true
+
+[node name="AutoAdd" type="CheckBox" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC"]
+visible = false
+margin_top = 68.0
+margin_right = 196.0
+margin_bottom = 94.0
+pressed = true
+text = "選択すると追加する"
+
+[node name="CheckBoxCanvasSizeFit" type="CheckBox" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC"]
+margin_top = 68.0
+margin_right = 196.0
+margin_bottom = 94.0
+hint_tooltip = "if image is over canvas size, canvas size change over."
+pressed = true
+text = "キャンバスサイズ自動調整"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="LineEdit" type="LineEdit" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC"]
+visible = false
+margin_top = 320.0
+margin_right = 201.0
+margin_bottom = 346.0
+rect_min_size = Vector2( 0, 26 )
+editable = false
+
+[node name="Add" type="HBoxContainer" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC"]
+margin_top = 100.0
+margin_right = 196.0
+margin_bottom = 100.0
+
+[node name="AddButton" type="Button" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/Add"]
+visible = false
+margin_right = 201.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 0, 28 )
+size_flags_horizontal = 3
+disabled = true
+text = "キャンバスに追加"
+icon = ExtResource( 7 )
+expand_icon = true
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC"]
+margin_top = 106.0
+margin_right = 196.0
+margin_bottom = 112.0
+custom_constants/separation = 6
+
+[node name="imageInfo" type="VBoxContainer" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC"]
+margin_top = 118.0
+margin_right = 196.0
+margin_bottom = 270.0
+
+[node name="Info" type="HBoxContainer" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/imageInfo"]
+margin_right = 196.0
+margin_bottom = 28.0
+
+[node name="IsPreview" type="HBoxContainer" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/imageInfo/Info"]
+margin_right = 28.0
+margin_bottom = 28.0
+
+[node name="IconPreview" type="Button" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/imageInfo/Info/IsPreview"]
+margin_right = 28.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 28, 28 )
+icon = ExtResource( 21 )
+expand_icon = true
+
+[node name="W" type="Label" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/imageInfo/Info"]
+margin_left = 32.0
+margin_top = 5.0
+margin_right = 62.0
+margin_bottom = 23.0
+text = "W:96"
+
+[node name="H" type="Label" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/imageInfo/Info"]
+margin_left = 66.0
+margin_top = 5.0
+margin_right = 94.0
+margin_bottom = 23.0
+text = "H:96"
+
+[node name="Preview" type="TextureRect" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/imageInfo"]
+margin_top = 32.0
+margin_right = 196.0
+margin_bottom = 152.0
+rect_min_size = Vector2( 0, 120 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC"]
+margin_top = 276.0
+margin_right = 196.0
+margin_bottom = 497.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+select_mode = 1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC"]
+margin_top = 503.0
+margin_right = 196.0
+margin_bottom = 509.0
+custom_constants/separation = 6
+
+[node name="RemoveItemButton" type="Button" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC"]
+margin_top = 515.0
+margin_right = 196.0
+margin_bottom = 547.0
+rect_min_size = Vector2( 0, 32 )
+text = "↑で選択した画像を削除"
+icon = ExtResource( 8 )
+expand_icon = true
+
+[node name="HSeparator" type="HSeparator" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC"]
+margin_top = 553.0
+margin_right = 196.0
+margin_bottom = 558.0
+custom_constants/separation = 5
+
+[node name="RemoveAllItemButton" type="Button" parent="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC"]
+margin_top = 564.0
+margin_right = 196.0
+margin_bottom = 588.0
+text = "全ての画像を削除"
+icon = ExtResource( 8 )
+expand_icon = true
+
+[node name="Tools" type="HSplitContainer" parent="VBoxC/TabC/Tile/Main"]
+margin_left = 224.0
+margin_right = 324.0
+margin_bottom = 588.0
+
+[node name="HBoxC" type="HBoxContainer" parent="VBoxC/TabC/Tile/Main/Tools"]
+margin_right = 100.0
+margin_bottom = 588.0
+
+[node name="MC" type="MarginContainer" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC"]
+margin_right = 48.0
+margin_bottom = 588.0
+theme = ExtResource( 26 )
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+
+[node name="VBoxC" type="VBoxContainer" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 44.0
+margin_bottom = 584.0
+size_flags_horizontal = 3
+custom_constants/separation = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Move" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "ショートカットキー：Q
+画像の移動、選択をします。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+shortcut_in_tooltip = false
+pressed = true
+shortcut = SubResource( 37 )
+group = ExtResource( 23 )
+icon = ExtResource( 33 )
+expand_icon = true
+
+[node name="MarkMove" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
+margin_top = 52.0
+margin_right = 40.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "ショートカットキー：W
+マークの移動、選択をします。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+shortcut_in_tooltip = false
+shortcut = SubResource( 6 )
+group = ExtResource( 23 )
+icon = ExtResource( 6 )
+expand_icon = true
+
+[node name="HSeparator" type="HSeparator" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
+margin_top = 104.0
+margin_right = 40.0
+margin_bottom = 109.0
+custom_constants/separation = 5
+
+[node name="Maru" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
+margin_top = 121.0
+margin_right = 40.0
+margin_bottom = 161.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "ショートカットキー：１
+通行可能タイルにします。
+印ペイントなしと全く同じです。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+shortcut_in_tooltip = false
+shortcut = SubResource( 8 )
+group = ExtResource( 23 )
+icon = ExtResource( 17 )
+expand_icon = true
+
+[node name="Batu" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
+margin_top = 173.0
+margin_right = 40.0
+margin_bottom = 213.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "ショートカットキー：２
+タイルを通行不可にします。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+shortcut_in_tooltip = false
+shortcut = SubResource( 10 )
+group = ExtResource( 23 )
+icon = ExtResource( 19 )
+expand_icon = true
+
+[node name="Hoshi" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
+margin_top = 225.0
+margin_right = 40.0
+margin_bottom = 265.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "ショートカットキー：３
+常にキャラの上に表示します。
+下をくぐって通れます。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+shortcut_in_tooltip = false
+shortcut = SubResource( 12 )
+group = ExtResource( 23 )
+icon = ExtResource( 13 )
+expand_icon = true
+
+[node name="Hoshi2" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
+margin_top = 277.0
+margin_right = 40.0
+margin_bottom = 317.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "ショートカットキー：４
+常にキャラの上に表示します。
+下をくぐって通れません。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+shortcut_in_tooltip = false
+shortcut = SubResource( 14 )
+group = ExtResource( 23 )
+icon = ExtResource( 28 )
+expand_icon = true
+
+[node name="Sankaku" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
+margin_top = 329.0
+margin_right = 40.0
+margin_bottom = 369.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "ショートカットキー：５
+後ろに行くと隠れます。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+shortcut_in_tooltip = false
+shortcut = SubResource( 16 )
+group = ExtResource( 23 )
+icon = ExtResource( 14 )
+expand_icon = true
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
+margin_top = 381.0
+margin_right = 40.0
+margin_bottom = 386.0
+custom_constants/separation = 5
+
+[node name="BatuGrid" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
+margin_top = 398.0
+margin_right = 40.0
+margin_bottom = 438.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "ショートカットキー：６
+マークを削除します。
+1/2, 3/1, 1/4 サイズで通行禁止にします。
+他マークと同マスに置けます。
+
+そのマスのすべての通行設定は詳細バツマークの内容になります。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+shortcut_in_tooltip = false
+shortcut = SubResource( 35 )
+group = ExtResource( 23 )
+icon = ExtResource( 32 )
+expand_icon = true
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
+margin_top = 450.0
+margin_right = 40.0
+margin_bottom = 455.0
+custom_constants/separation = 5
+
+[node name="Keshigomu" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
+margin_top = 467.0
+margin_right = 40.0
+margin_bottom = 507.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "ショートカットキー：E
+マークを削除します。
+ペイントツール中に右ドラッグでも削除可能です。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+shortcut_in_tooltip = false
+shortcut = SubResource( 18 )
+group = ExtResource( 23 )
+icon = ExtResource( 20 )
+expand_icon = true
+
+[node name="Cursor" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
+margin_top = 519.0
+margin_right = 40.0
+margin_bottom = 559.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "ショートカットキー：C
+マスカーソルを移動します。
+キャンバスへの画像追加はマスカーソル位置に追加されます。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+shortcut_in_tooltip = false
+shortcut = SubResource( 20 )
+group = ExtResource( 23 )
+icon = ExtResource( 11 )
+expand_icon = true
+
+[node name="MC2" type="MarginContainer" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 588.0
+theme = ExtResource( 26 )
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+
+[node name="VBoxC" type="VBoxContainer" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC2"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 44.0
+margin_bottom = 584.0
+size_flags_horizontal = 3
+custom_constants/separation = 13
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoveLock" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC2/VBoxC"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "ショートカットキー：Ｌ
+画像がドラッグで移動しないようにします。"
+size_flags_horizontal = 3
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+shortcut_in_tooltip = false
+shortcut = SubResource( 22 )
+icon = ExtResource( 16 )
+expand_icon = true
+
+[node name="SingleTileConcat" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC2/VBoxC"]
+margin_top = 53.0
+margin_right = 40.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "ショートカットキー：Ｓ
+複数タイルを１つのシングルタイルにします"
+size_flags_horizontal = 3
+shortcut_in_tooltip = false
+shortcut = SubResource( 28 )
+icon = ExtResource( 15 )
+expand_icon = true
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC2/VBoxC"]
+margin_top = 106.0
+margin_right = 40.0
+margin_bottom = 108.0
+custom_constants/separation = 2
+custom_styles/separator = SubResource( 33 )
+
+[node name="AutoTileRecog" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC2/VBoxC"]
+margin_top = 121.0
+margin_right = 40.0
+margin_bottom = 161.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "ショートカットキー：Ａ
+複数タイルをオートタイルにします。
+対応…1x3, 3x1, 3x2, 3x3, 3x3(真ん中穴)"
+size_flags_horizontal = 3
+shortcut_in_tooltip = false
+shortcut = SubResource( 26 )
+icon = ExtResource( 10 )
+expand_icon = true
+
+[node name="Trash" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC2/VBoxC"]
+margin_top = 174.0
+margin_right = 40.0
+margin_bottom = 214.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "ショートカットキー：なし
+選択中の画像を削除します。"
+size_flags_horizontal = 3
+shortcut_in_tooltip = false
+icon = ExtResource( 8 )
+expand_icon = true
+
+[node name="Panel" type="Panel" parent="VBoxC/TabC/Tile/Main/Tools"]
+visible = false
+margin_right = 120.0
+margin_bottom = 615.0
+rect_min_size = Vector2( 120, 0 )
+
+[node name="Panel_2" type="Panel" parent="VBoxC/TabC/Tile/Main/Tools"]
+visible = false
+margin_left = 112.0
+margin_right = 245.0
+margin_bottom = 588.0
+rect_min_size = Vector2( 133, 133 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BatuGrid" type="TabContainer" parent="VBoxC/TabC/Tile/Main/Tools"]
+visible = false
+margin_left = 112.0
+margin_right = 250.0
+margin_bottom = 588.0
+rect_min_size = Vector2( 130, 130 )
+theme = ExtResource( 26 )
+script = ExtResource( 30 )
+
+[node name="GridC2X2" type="GridContainer" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 36.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_min_size = Vector2( 130, 130 )
+custom_constants/vseparation = 8
+custom_constants/hseparation = 8
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false,
+"_tab_name": "2"
+}
+
+[node name="TL" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC2X2"]
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+
+[node name="TR" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC2X2"]
+margin_left = 68.0
+margin_right = 128.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.5, 0 )
+
+[node name="BL" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC2X2"]
+margin_top = 68.0
+margin_right = 60.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 60, 60 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0, 0.5 )
+
+[node name="BR" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC2X2"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 60, 60 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.5, 0.5 )
+
+[node name="GridC3X3" type="GridContainer" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 36.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_min_size = Vector2( 130, 130 )
+custom_constants/vseparation = 6
+custom_constants/hseparation = 6
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false,
+"_tab_name": "3"
+}
+
+[node name="TL" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+
+[node name="TC" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3"]
+margin_left = 46.0
+margin_right = 86.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.33, 0 )
+
+[node name="TR" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3"]
+margin_left = 92.0
+margin_right = 132.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.66, 0 )
+
+[node name="CL" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3"]
+margin_top = 46.0
+margin_right = 40.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0, 0.33 )
+
+[node name="CC" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3"]
+margin_left = 46.0
+margin_top = 46.0
+margin_right = 86.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.33, 0.33 )
+
+[node name="CR" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3"]
+margin_left = 92.0
+margin_top = 46.0
+margin_right = 132.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.66, 0.33 )
+
+[node name="BL" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3"]
+margin_top = 92.0
+margin_right = 40.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0, 0.66 )
+
+[node name="BC" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3"]
+margin_left = 46.0
+margin_top = 92.0
+margin_right = 86.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.33, 0.66 )
+
+[node name="BR" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3"]
+margin_left = 92.0
+margin_top = 92.0
+margin_right = 132.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 40, 40 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.66, 0.66 )
+
+[node name="GridC4X4" type="GridContainer" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 36.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_min_size = Vector2( 130, 130 )
+custom_constants/vseparation = 3
+custom_constants/hseparation = 3
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false,
+"_tab_name": "4"
+}
+
+[node name="TLTL" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_right = 30.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+
+[node name="TLTR" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_left = 33.0
+margin_right = 63.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.25, 0 )
+
+[node name="TRTL" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_left = 66.0
+margin_right = 96.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.5, 0 )
+
+[node name="TRTR" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_left = 99.0
+margin_right = 129.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.75, 0 )
+
+[node name="TLBL" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_top = 33.0
+margin_right = 30.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0, 0.25 )
+
+[node name="TLBR" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_left = 33.0
+margin_top = 33.0
+margin_right = 63.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.25, 0.25 )
+
+[node name="TRBL" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_left = 66.0
+margin_top = 33.0
+margin_right = 96.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.5, 0.25 )
+
+[node name="TRBR" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_left = 99.0
+margin_top = 33.0
+margin_right = 129.0
+margin_bottom = 63.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.75, 0.25 )
+
+[node name="BLTL" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_top = 66.0
+margin_right = 30.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0, 0.5 )
+
+[node name="BLTR" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_left = 33.0
+margin_top = 66.0
+margin_right = 63.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.25, 0.5 )
+
+[node name="BRTL" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_left = 66.0
+margin_top = 66.0
+margin_right = 96.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.5, 0.5 )
+
+[node name="BRTR" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_left = 99.0
+margin_top = 66.0
+margin_right = 129.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.75, 0.5 )
+
+[node name="BLBL" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_top = 99.0
+margin_right = 30.0
+margin_bottom = 129.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0, 0.75 )
+
+[node name="BLBR" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_left = 33.0
+margin_top = 99.0
+margin_right = 63.0
+margin_bottom = 129.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.25, 0.75 )
+
+[node name="BRBL" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_left = 66.0
+margin_top = 99.0
+margin_right = 96.0
+margin_bottom = 129.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.5, 0.75 )
+
+[node name="BRBR" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4"]
+margin_left = 99.0
+margin_top = 99.0
+margin_right = 129.0
+margin_bottom = 129.0
+rect_min_size = Vector2( 30, 30 )
+hint_tooltip = "印ペイントを消します。"
+custom_styles/pressed = ExtResource( 27 )
+toggle_mode = true
+expand_icon = true
+script = ExtResource( 31 )
+coord = Vector2( 0.75, 0.75 )
+
+[node name="VBoxC" type="VBoxContainer" parent="VBoxC/TabC/Tile/Main"]
+margin_left = 328.0
+margin_right = 1284.0
+margin_bottom = 588.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxC" type="HBoxContainer" parent="VBoxC/TabC/Tile/Main/VBoxC"]
+margin_right = 956.0
+margin_bottom = 28.0
+custom_constants/separation = 12
+
+[node name="OptionButtonPxOrCell" type="OptionButton" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC"]
+margin_right = 100.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 100, 0 )
+text = "マス"
+items = [ "ピクセル", null, false, 0, null, "マス", null, false, 1, null ]
+selected = 1
+
+[node name="Label" type="Label" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC"]
+margin_left = 112.0
+margin_top = 5.0
+margin_right = 231.0
+margin_bottom = 23.0
+text = "キャンバスサイズ :"
+
+[node name="HBoxCWidth" type="HBoxContainer" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC"]
+margin_left = 243.0
+margin_right = 381.0
+margin_bottom = 28.0
+
+[node name="Label" type="Label" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCWidth"]
+margin_top = 5.0
+margin_right = 28.0
+margin_bottom = 23.0
+text = "横幅"
+
+[node name="SpinBoxWidth" type="SpinBox" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCWidth"]
+margin_left = 32.0
+margin_right = 106.0
+margin_bottom = 28.0
+min_value = 1.0
+max_value = 16384.0
+value = 10.0
+align = 1
+
+[node name="LabelPxOrCell" type="Label" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCWidth"]
+margin_left = 110.0
+margin_top = 5.0
+margin_right = 138.0
+margin_bottom = 23.0
+text = "マス"
+
+[node name="HBoxCHeight" type="HBoxContainer" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC"]
+margin_left = 393.0
+margin_right = 531.0
+margin_bottom = 28.0
+
+[node name="Label" type="Label" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCHeight"]
+margin_top = 5.0
+margin_right = 28.0
+margin_bottom = 23.0
+text = "高さ"
+
+[node name="SpinBoxHeight" type="SpinBox" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCHeight"]
+margin_left = 32.0
+margin_right = 106.0
+margin_bottom = 28.0
+min_value = 1.0
+max_value = 16384.0
+value = 10.0
+align = 1
+
+[node name="LabelPxOrCell" type="Label" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCHeight"]
+margin_left = 110.0
+margin_top = 5.0
+margin_right = 138.0
+margin_bottom = 23.0
+text = "マス"
+
+[node name="HBoxCPaintColor" type="HBoxContainer" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC"]
+margin_left = 543.0
+margin_right = 654.0
+margin_bottom = 28.0
+
+[node name="Label" type="Label" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCPaintColor"]
+margin_top = 5.0
+margin_right = 59.0
+margin_bottom = 23.0
+text = "マーク色:"
+
+[node name="ColorPickerButtonPaint" type="ColorPickerButton" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCPaintColor"]
+margin_left = 63.0
+margin_right = 111.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 48, 24 )
+color = Color( 1, 1, 1, 1 )
+
+[node name="HBoxCBgColor" type="HBoxContainer" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC"]
+margin_left = 666.0
+margin_right = 833.0
+margin_bottom = 28.0
+
+[node name="Label" type="Label" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCBgColor"]
+margin_top = 5.0
+margin_right = 115.0
+margin_bottom = 23.0
+text = "キャンバス背景色:"
+
+[node name="ColorPickerButtonGridCanvas" type="ColorPickerButton" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCBgColor"]
+margin_left = 119.0
+margin_right = 167.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 48, 24 )
+color = Color( 0.729412, 0.729412, 0.729412, 0.423529 )
+
+[node name="HBoxCGridLineColor" type="HBoxContainer" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC"]
+margin_left = 845.0
+margin_right = 956.0
+margin_bottom = 28.0
+
+[node name="Label" type="Label" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCGridLineColor"]
+margin_top = 5.0
+margin_right = 59.0
+margin_bottom = 23.0
+text = "グリッド:"
+
+[node name="ColorPickerButtonGridLine" type="ColorPickerButton" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCGridLineColor"]
+margin_left = 63.0
+margin_right = 111.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 48, 24 )
+color = Color( 1, 0, 0, 0.435294 )
+
+[node name="Grid" type="PanelContainer" parent="VBoxC/TabC/Tile/Main/VBoxC"]
+margin_top = 32.0
+margin_right = 956.0
+margin_bottom = 588.0
+rect_clip_content = true
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GraphEditImage" type="GraphEdit" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 949.0
+margin_bottom = 549.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 26 )
+custom_colors/grid_major = Color( 1, 0, 0, 1 )
+custom_colors/grid_minor = Color( 1, 0, 0, 0.45098 )
+custom_styles/bg = SubResource( 3 )
+scroll_offset = Vector2( -64, -64 )
+snap_distance = 32
+show_zoom_label = true
+minimap_enabled = false
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+_graph_edit_paint_path = NodePath("../GraphEditPaint")
+_graph_edit_mark_path = NodePath("../GraphEditMark")
+CellSize = 32
+
+[node name="GridCanvas" type="ColorRect" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditImage"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 384.0
+margin_bottom = 384.0
+mouse_filter = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+color = Color( 0.729412, 0.729412, 0.729412, 0.423529 )
+
+[node name="GraphNodeCursor" type="GraphNode" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditImage"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 96.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 32, 32 )
+mouse_filter = 1
+custom_styles/selectedframe = ExtResource( 25 )
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 5 )
+
+[node name="TextureRect" type="TextureRect" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditImage/GraphNodeCursor"]
+margin_right = 32.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditImage/GraphNodeCursor/TextureRect"]
+autoplay = "animation"
+anims/RESET = SubResource( 1 )
+anims/animation = SubResource( 2 )
+
+[node name="GraphEditMark" type="GraphEdit" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 949.0
+margin_bottom = 549.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 26 )
+custom_styles/bg = SubResource( 3 )
+scroll_offset = Vector2( -64, -64 )
+snap_distance = 32
+show_zoom_label = true
+minimap_enabled = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+_graph_edit_image_path = NodePath("../GraphEditImage")
+_graph_edit_paint_path = NodePath("../GraphEditPaint")
+mark_node_dic = {
+}
+mark_cell_dic = {
+}
+CellSize = 32
+
+[node name="GraphEditPaint" type="GraphEdit" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 949.0
+margin_bottom = 549.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 26 )
+custom_styles/bg = SubResource( 3 )
+scroll_offset = Vector2( -64, -64 )
+snap_distance = 32
+show_zoom_label = true
+minimap_enabled = false
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+_graph_edit_image_path = NodePath("../GraphEditImage")
+_graph_edit_mark_path = NodePath("../GraphEditMark")
+CellSize = 32
+
+[node name="TopLeftGraphNode" type="GraphNode" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditPaint"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 104.0
+margin_bottom = 104.0
+mouse_filter = 1
+custom_styles/commentfocus = SubResource( 29 )
+custom_styles/comment = SubResource( 29 )
+custom_styles/frame = SubResource( 29 )
+custom_styles/selectedframe = SubResource( 29 )
+custom_styles/position = SubResource( 29 )
+custom_styles/defaultfocus = SubResource( 29 )
+custom_styles/breakpoint = SubResource( 29 )
+custom_styles/defaultframe = SubResource( 29 )
+script = SubResource( 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottomRightGraphNode" type="GraphNode" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditPaint"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 104.0
+margin_bottom = 104.0
+mouse_filter = 1
+custom_styles/commentfocus = SubResource( 29 )
+custom_styles/comment = SubResource( 29 )
+custom_styles/frame = SubResource( 29 )
+custom_styles/selectedframe = SubResource( 29 )
+custom_styles/position = SubResource( 29 )
+custom_styles/defaultfocus = SubResource( 29 )
+custom_styles/breakpoint = SubResource( 29 )
+custom_styles/defaultframe = SubResource( 29 )
+script = SubResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContainerGridRect" type="Container" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 949.0
+margin_bottom = 549.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRectX" type="ColorRect" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/ContainerGridRect"]
+margin_top = 64.0
+margin_right = 942.0
+margin_bottom = 65.0
+mouse_filter = 2
+
+[node name="ColorRectX2" type="ColorRect" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/ContainerGridRect"]
+margin_top = 384.0
+margin_right = 942.0
+margin_bottom = 385.0
+mouse_filter = 2
+
+[node name="ColorRectY" type="ColorRect" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/ContainerGridRect"]
+margin_left = 63.0
+margin_right = 64.0
+margin_bottom = 542.0
+mouse_filter = 2
+
+[node name="ColorRectY2" type="ColorRect" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/ContainerGridRect"]
+margin_left = 383.0
+margin_right = 384.0
+margin_bottom = 542.0
+mouse_filter = 2
+
+[node name="Help" parent="VBoxC/TabC" instance=ExtResource( 34 )]
+visible = false
+margin_left = 4.0
+margin_top = 36.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="MarginC" type="MarginContainer" parent="VBoxC"]
+margin_top = 638.0
+margin_right = 1292.0
+margin_bottom = 720.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 3
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+
+[node name="Panel" type="Panel" parent="VBoxC/MarginC"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 1288.0
+margin_bottom = 78.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Footer" type="HBoxContainer" parent="VBoxC/MarginC"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 1288.0
+margin_bottom = 78.0
+alignment = 1
+
+[node name="ButtonSetting" type="Button" parent="VBoxC/MarginC/Footer"]
+margin_left = 42.0
+margin_right = 152.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 110, 28 )
+text = "タイル設定"
+icon = ExtResource( 12 )
+expand_icon = true
+
+[node name="VSeparator" type="VSeparator" parent="VBoxC/MarginC/Footer"]
+margin_left = 156.0
+margin_right = 172.0
+margin_bottom = 75.0
+custom_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxC/MarginC/Footer"]
+margin_left = 176.0
+margin_right = 488.0
+margin_bottom = 75.0
+custom_constants/separation = -5
+
+[node name="GridContainer" type="GridContainer" parent="VBoxC/MarginC/Footer/VBoxContainer"]
+margin_right = 312.0
+margin_bottom = 54.0
+custom_constants/vseparation = -2
+custom_constants/hseparation = 0
+columns = 4
+
+[node name="LabelZIndex" type="Label" parent="VBoxC/MarginC/Footer/VBoxContainer/GridContainer"]
+margin_top = 5.0
+margin_right = 88.0
+margin_bottom = 23.0
+hint_tooltip = "キャラ、オブジェクトより低くする"
+text = "〇×のZ Index"
+align = 2
+valign = 1
+
+[node name="SpinBoxZIndexMaru" type="SpinBox" parent="VBoxC/MarginC/Footer/VBoxContainer/GridContainer"]
+margin_left = 88.0
+margin_right = 162.0
+margin_bottom = 28.0
+hint_tooltip = "キャラ、オブジェクトより低くする"
+min_value = -4096.0
+max_value = 4096.0
+value = -1.0
+align = 1
+
+[node name="LabelZIndex_2" type="Label" parent="VBoxC/MarginC/Footer/VBoxContainer/GridContainer"]
+margin_left = 162.0
+margin_top = 5.0
+margin_right = 238.0
+margin_bottom = 23.0
+hint_tooltip = "キャラ、オブジェクトより高くする"
+text = "★のZ Index"
+align = 2
+valign = 1
+
+[node name="SpinBoxZIndexHoshi" type="SpinBox" parent="VBoxC/MarginC/Footer/VBoxContainer/GridContainer"]
+margin_left = 238.0
+margin_right = 312.0
+margin_bottom = 28.0
+hint_tooltip = "キャラ、オブジェクトより高くする"
+min_value = -4096.0
+max_value = 4096.0
+value = 1.0
+align = 1
+
+[node name="LabelZIndex_3" type="Label" parent="VBoxC/MarginC/Footer/VBoxContainer/GridContainer"]
+margin_top = 31.0
+margin_right = 88.0
+margin_bottom = 49.0
+hint_tooltip = "キャラ、オブジェクトと同じ高さにする
+（YSortを反映させるため）"
+text = "△のZ Index"
+align = 2
+valign = 1
+
+[node name="SpinBoxZIndexSankaku" type="SpinBox" parent="VBoxC/MarginC/Footer/VBoxContainer/GridContainer"]
+margin_left = 88.0
+margin_top = 26.0
+margin_right = 162.0
+margin_bottom = 54.0
+hint_tooltip = "キャラ、オブジェクトと同じ高さにする
+（YSortを反映させるため）"
+min_value = -4096.0
+max_value = 4096.0
+align = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxC/MarginC/Footer/VBoxContainer/GridContainer/SpinBoxZIndexSankaku"]
+margin_left = 74.0
+margin_top = 8.0
+margin_right = 88.0
+margin_bottom = 22.0
+texture = ExtResource( 28 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelZIndex_4" type="Label" parent="VBoxC/MarginC/Footer/VBoxContainer/GridContainer"]
+margin_left = 162.0
+margin_top = 31.0
+margin_right = 238.0
+margin_bottom = 49.0
+hint_tooltip = "キャラ、オブジェクトより高くする"
+text = "のZ Index"
+align = 2
+valign = 1
+
+[node name="SpinBoxZIndexHoshi2" type="SpinBox" parent="VBoxC/MarginC/Footer/VBoxContainer/GridContainer"]
+margin_left = 238.0
+margin_top = 26.0
+margin_right = 312.0
+margin_bottom = 54.0
+hint_tooltip = "キャラ、オブジェクトより高くする"
+min_value = -4096.0
+max_value = 4096.0
+value = 1.0
+align = 1
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxC/MarginC/Footer"]
+margin_left = 492.0
+margin_right = 504.0
+margin_bottom = 75.0
+custom_constants/separation = 12
+
+[node name="CheckButtonBgExportTransparent" type="CheckButton" parent="VBoxC/MarginC/Footer"]
+margin_left = 508.0
+margin_right = 770.0
+margin_bottom = 75.0
+pressed = true
+text = "キャンバス背景は透明で出力"
+align = 2
+
+[node name="VSeparator3" type="VSeparator" parent="VBoxC/MarginC/Footer"]
+margin_left = 774.0
+margin_right = 786.0
+margin_bottom = 75.0
+custom_constants/separation = 12
+
+[node name="GridContainer" type="GridContainer" parent="VBoxC/MarginC/Footer"]
+margin_left = 790.0
+margin_right = 1102.0
+margin_bottom = 75.0
+custom_constants/vseparation = 7
+custom_constants/hseparation = 0
+columns = 2
+
+[node name="LabelTileSetName" type="Label" parent="VBoxC/MarginC/Footer/GridContainer"]
+margin_top = 8.0
+margin_right = 112.0
+margin_bottom = 26.0
+text = "TileSet 出力パス:"
+align = 2
+valign = 1
+
+[node name="LineEditTileSetName" type="LineEdit" parent="VBoxC/MarginC/Footer/GridContainer"]
+margin_left = 112.0
+margin_right = 312.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 200, 22 )
+custom_fonts/font = ExtResource( 29 )
+text = "res://output_tileset.tres"
+
+[node name="LabelTileSetName_2" type="Label" parent="VBoxC/MarginC/Footer/GridContainer"]
+margin_top = 49.0
+margin_right = 112.0
+margin_bottom = 67.0
+text = "PNG 出力パス:"
+align = 2
+valign = 1
+
+[node name="LineEditTileSetName_2" type="LineEdit" parent="VBoxC/MarginC/Footer/GridContainer"]
+margin_left = 112.0
+margin_top = 41.0
+margin_right = 312.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 200, 22 )
+custom_fonts/font = ExtResource( 29 )
+text = "res://output_tileset.png"
+
+[node name="VSeparator4" type="VSeparator" parent="VBoxC/MarginC/Footer"]
+margin_left = 1106.0
+margin_right = 1118.0
+margin_bottom = 75.0
+custom_constants/separation = 12
+
+[node name="PanelC" type="MarginContainer" parent="VBoxC/MarginC/Footer"]
+margin_left = 1122.0
+margin_right = 1242.0
+margin_bottom = 75.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonExport" type="Button" parent="VBoxC/MarginC/Footer/PanelC"]
+margin_right = 120.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 120, 40 )
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 38 )
+text = "出力！"
+
+[node name="MarginC" type="MarginContainer" parent="."]
+visible = false
+margin_right = 1292.0
+margin_bottom = 720.0
+
+[node name="FileDialog" type="FileDialog" parent="MarginC"]
+margin_right = 1292.0
+margin_bottom = 720.0
+window_title = "ファイルを開く"
+resizable = true
+mode = 1
+filters = PoolStringArray( "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;" )
+show_hidden_files = true
+
+[node name="MarginC_Setting" type="MarginContainer" parent="."]
+visible = false
+margin_right = 1292.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 26 )
+custom_constants/margin_right = 120
+custom_constants/margin_top = 120
+custom_constants/margin_left = 120
+custom_constants/margin_bottom = 120
+
+[node name="PopupDialogSetting" type="PopupDialog" parent="MarginC_Setting"]
+margin_left = 120.0
+margin_top = 120.0
+margin_right = 1172.0
+margin_bottom = 600.0
+popup_exclusive = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginC_Setting/PopupDialogSetting"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginCSetumei" type="MarginContainer" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer"]
+margin_right = 360.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 360, 0 )
+size_flags_horizontal = 0
+custom_constants/margin_right = 12
+custom_constants/margin_top = 12
+custom_constants/margin_left = 12
+custom_constants/margin_bottom = 12
+
+[node name="Label" type="Label" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCSetumei"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 348.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 32 )
+text = "タイル設定"
+
+[node name="MarginCSetumei2" type="MarginContainer" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer"]
+margin_top = 46.0
+margin_right = 360.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 360, 0 )
+size_flags_horizontal = 0
+custom_constants/margin_right = 12
+custom_constants/margin_top = 12
+custom_constants/margin_left = 12
+custom_constants/margin_bottom = 12
+
+[node name="Panel" type="Panel" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCSetumei2"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 348.0
+margin_bottom = 30.0
+
+[node name="Label" type="Label" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCSetumei2"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 348.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+text = "変更すると、現在のタイル設定が初期化されます。"
+align = 1
+
+[node name="MarginCCell" type="MarginContainer" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer"]
+margin_top = 92.0
+margin_right = 360.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 360, 0 )
+size_flags_horizontal = 0
+custom_constants/margin_right = 12
+custom_constants/margin_top = 12
+custom_constants/margin_left = 12
+custom_constants/margin_bottom = 12
+
+[node name="Panel" type="Panel" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCCell"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 348.0
+margin_bottom = 40.0
+
+[node name="HBoxCCell" type="HBoxContainer" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCCell"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 348.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCCell/HBoxCCell"]
+margin_top = 5.0
+margin_right = 166.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+text = "CellSize"
+
+[node name="SpinBoxCellSize" type="SpinBox" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCCell/HBoxCCell"]
+margin_left = 170.0
+margin_right = 336.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+max_value = 9999.0
+value = 32.0
+align = 2
+
+[node name="MarginCAuto" type="MarginContainer" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer"]
+visible = false
+margin_top = 52.0
+margin_right = 360.0
+margin_bottom = 116.0
+rect_min_size = Vector2( 360, 0 )
+size_flags_horizontal = 0
+custom_constants/margin_right = 12
+custom_constants/margin_top = 12
+custom_constants/margin_left = 12
+custom_constants/margin_bottom = 12
+
+[node name="Panel" type="Panel" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCAuto"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 348.0
+margin_bottom = 52.0
+
+[node name="HBoxCCell" type="HBoxContainer" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCAuto"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 348.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCAuto/HBoxCCell"]
+margin_top = 13.0
+margin_right = 256.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+text = "AutoTile"
+
+[node name="CheckButtonAuto" type="CheckButton" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCAuto/HBoxCCell"]
+margin_left = 260.0
+margin_right = 336.0
+margin_bottom = 40.0
+
+[node name="MarginCAuto_2" type="MarginContainer" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer"]
+margin_top = 148.0
+margin_right = 360.0
+margin_bottom = 232.0
+rect_min_size = Vector2( 360, 0 )
+size_flags_horizontal = 0
+custom_constants/margin_right = 12
+custom_constants/margin_top = 12
+custom_constants/margin_left = 12
+custom_constants/margin_bottom = 12
+
+[node name="Panel" type="Panel" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCAuto_2"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 348.0
+margin_bottom = 72.0
+
+[node name="ButtonSettingClose" type="Button" parent="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCAuto_2"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 348.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 0, 60 )
+text = "Close"
+
+[node name="PopupDialogMessage" type="PopupDialog" parent="."]
+margin_right = 1292.0
+margin_bottom = 720.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 26 )
+
+[node name="LabelMessage" type="RichTextLabel" parent="PopupDialogMessage"]
+visible = false
+margin_right = 303.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 120, 30 )
+rect_clip_content = false
+mouse_filter = 2
+fit_content_height = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="tab_changed" from="VBoxC/TabC" to="." method="_on_TabC_tab_changed"]
+[connection signal="item_selected" from="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/OptionButtonWorT" to="." method="_on_OptionButtonWorT_item_selected"]
+[connection signal="pressed" from="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/SelectButton" to="." method="_on_SelectButton_pressed"]
+[connection signal="pressed" from="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/AutoAdd" to="." method="_on_AutoAdd_pressed"]
+[connection signal="pressed" from="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/CheckBoxCanvasSizeFit" to="." method="_setting_changed"]
+[connection signal="pressed" from="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/Add/AddButton" to="." method="_on_AddButton_pressed"]
+[connection signal="pressed" from="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/imageInfo/Info/IsPreview/IconPreview" to="." method="_on_IconPreview_pressed"]
+[connection signal="item_selected" from="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="multi_selected" from="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/ItemList" to="." method="_on_ItemList_multi_selected"]
+[connection signal="pressed" from="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/RemoveItemButton" to="." method="_on_ButtonRemoveItem_pressed"]
+[connection signal="pressed" from="VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/RemoveAllItemButton" to="." method="_on_ButtonRemoveAll_pressed"]
+[connection signal="toggled" from="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Move" to="." method="_on_Tool_toggled"]
+[connection signal="toggled" from="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/MarkMove" to="." method="_on_Tool_toggled"]
+[connection signal="toggled" from="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Maru" to="." method="_on_Tool_toggled"]
+[connection signal="toggled" from="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Batu" to="." method="_on_Tool_toggled"]
+[connection signal="toggled" from="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Hoshi" to="." method="_on_Tool_toggled"]
+[connection signal="toggled" from="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Hoshi2" to="." method="_on_Tool_toggled"]
+[connection signal="toggled" from="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Sankaku" to="." method="_on_Tool_toggled"]
+[connection signal="toggled" from="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/BatuGrid" to="." method="_on_Tool_toggled"]
+[connection signal="toggled" from="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Keshigomu" to="." method="_on_Tool_toggled"]
+[connection signal="toggled" from="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Cursor" to="." method="_on_Tool_toggled"]
+[connection signal="toggled" from="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC2/VBoxC/MoveLock" to="." method="_on_MoveLock_toggled"]
+[connection signal="pressed" from="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC2/VBoxC/SingleTileConcat" to="." method="_on_SingleTileConcat_pressed"]
+[connection signal="pressed" from="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC2/VBoxC/AutoTileRecog" to="." method="_on_AutoTileRecog_pressed"]
+[connection signal="pressed" from="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC2/VBoxC/Trash" to="." method="_on_Trash_pressed"]
+[connection signal="tab_changed" from="VBoxC/TabC/Tile/Main/Tools/BatuGrid" to="VBoxC/TabC/Tile/Main/Tools/BatuGrid" method="_on_BatuGrid_tab_changed"]
+[connection signal="item_selected" from="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/OptionButtonPxOrCell" to="." method="_on_OptionButtonPxOrCell_item_selected"]
+[connection signal="value_changed" from="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCWidth/SpinBoxWidth" to="." method="_on_SpinBoxGridCanvas_value_changed"]
+[connection signal="value_changed" from="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCHeight/SpinBoxHeight" to="." method="_on_SpinBoxGridCanvas_value_changed"]
+[connection signal="color_changed" from="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCPaintColor/ColorPickerButtonPaint" to="." method="_on_ColorPickerButtonPaint_color_changed"]
+[connection signal="color_changed" from="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCBgColor/ColorPickerButtonGridCanvas" to="." method="_on_ColorPickerButtonGridCanvas_color_changed"]
+[connection signal="color_changed" from="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCGridLineColor/ColorPickerButtonGridLine" to="." method="_on_ColorPickerButtonGridLine_color_changed"]
+[connection signal="copy_nodes_request" from="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditImage" to="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditImage" method="_on_GraphEditImage_copy_nodes_request"]
+[connection signal="paste_nodes_request" from="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditImage" to="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditImage" method="_on_GraphEditImage_paste_nodes_request"]
+[connection signal="scroll_offset_changed" from="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditImage" to="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditImage" method="_on_GraphEdit_scroll_offset_changed"]
+[connection signal="copy_nodes_request" from="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditMark" to="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditMark" method="_on_GraphEditMark_copy_nodes_request"]
+[connection signal="paste_nodes_request" from="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditMark" to="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditMark" method="_on_GraphEditMark_paste_nodes_request"]
+[connection signal="scroll_offset_changed" from="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditMark" to="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditMark" method="_on_GraphEditPaint_scroll_offset_changed"]
+[connection signal="release_drag_rect" from="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditPaint" to="." method="_on_Grid_release_drag_rect"]
+[connection signal="release_drag_rect_right" from="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditPaint" to="." method="_on_Grid_release_drag_rect_right"]
+[connection signal="scroll_offset_changed" from="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditPaint" to="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditPaint" method="_on_GraphEditPaint_scroll_offset_changed"]
+[connection signal="pressed" from="VBoxC/MarginC/Footer/ButtonSetting" to="." method="_on_ButtonSetting_pressed"]
+[connection signal="pressed" from="VBoxC/MarginC/Footer/PanelC/ButtonExport" to="." method="_on_ButtonExport_pressed"]
+[connection signal="files_selected" from="MarginC/FileDialog" to="." method="_on_FileDialog_files_selected"]
+[connection signal="popup_hide" from="MarginC/FileDialog" to="." method="_on_FileDialog_popup_hide"]
+[connection signal="popup_hide" from="MarginC_Setting/PopupDialogSetting" to="." method="_on_PopupDialogSetting_popup_hide"]
+[connection signal="value_changed" from="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCCell/HBoxCCell/SpinBoxCellSize" to="." method="_on_SpinBoxCellSize_value_changed"]
+[connection signal="pressed" from="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCAuto/HBoxCCell/CheckButtonAuto" to="." method="_on_CheckButtonAuto_pressed"]
+[connection signal="toggled" from="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCAuto/HBoxCCell/CheckButtonAuto" to="." method="_on_CheckButtonAuto_toggled"]
+[connection signal="pressed" from="MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCAuto_2/ButtonSettingClose" to="." method="_on_ButtonSettingClose_pressed"]
+[connection signal="popup_hide" from="PopupDialogMessage" to="." method="_on_PopupDialogSetting_popup_hide"]

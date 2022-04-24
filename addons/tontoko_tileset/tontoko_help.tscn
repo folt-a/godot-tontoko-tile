@@ -1,0 +1,634 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/tontoko_tileset/tontoko_help.gd" type="Script" id=1]
+[ext_resource path="res://addons/tontoko_tileset/graph_theme.tres" type="Theme" id=2]
+[ext_resource path="res://addons/tontoko_tileset/images/circle-question-24.svg" type="Texture" id=3]
+[ext_resource path="res://addons/tontoko_tileset/images/batu-grid-24.svg" type="Texture" id=4]
+[ext_resource path="res://addons/tontoko_tileset/images/tile-24.svg" type="Texture" id=5]
+[ext_resource path="res://addons/tontoko_tileset/images/image-24.svg" type="Texture" id=6]
+[ext_resource path="res://addons/tontoko_tileset/images/empty-grid-24.svg" type="Texture" id=7]
+
+[node name="Help" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+all_tabs_in_front = true
+
+[node name="Tutorial" type="HBoxContainer" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 66.0
+margin_right = -4.0
+margin_bottom = -4.0
+__meta__ = {
+"_tab_icon": ExtResource( 3 ),
+"_tab_name": "使い方"
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Tutorial"]
+margin_right = 1272.0
+margin_bottom = 650.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h1.tres]使い方[/font][/color]
+
+---
+
+[img]res://addons/tontoko_tileset/help/help_01_tab.webp[/img]
+
+上部ワークスペースに TontokoTile が追加されています。
+
+
+
+[img]res://addons/tontoko_tileset/help/image-20220424214851811.png[/img]
+
+[b]※「タイル設定」のCellSizeを設定する[/b]
+
+[img]res://addons/tontoko_tileset/help/image-20220424220127102.png[/img]
+
+追加する画像の種類を選択します。
+
+「通常タイル」「オートタイルウディタ形式」「オートタイルツクール形式」から選択します。
+
+「画像選択」で画像追加します。
+
+[img]res://addons/tontoko_tileset/help/image-20220424223609763.png[/img]
+
+マークをつけて通行設定をします。
+
+[b]マークは、ドラッグでまとめて矩形マークできます。[/b]
+
+複数シングルタイル化やオートタイル化をします。
+
+[img]res://addons/tontoko_tileset/help/help_04_canvassetting.webp[/img]
+
+出力するマス範囲を「キャンバスサイズ」で設定します。
+
+[img]res://addons/tontoko_tileset/help/help_03_footer.webp[/img]
+
+出力パスを指定して「出力！」ボタンを押します。
+
+[img]res://addons/tontoko_tileset/help/image-20220424221006149.png[/img]
+
+tresファイル、画像ファイルが作成されます。"
+text = "使い方
+
+---
+
+
+
+上部ワークスペースに TontokoTile が追加されています。
+
+
+
+
+
+※「タイル設定」のCellSizeを設定する
+
+
+
+追加する画像の種類を選択します。
+
+「通常タイル」「オートタイルウディタ形式」「オートタイルツクール形式」から選択します。
+
+「画像選択」で画像追加します。
+
+
+
+マークをつけて通行設定をします。
+
+マークは、ドラッグでまとめて矩形マークできます。
+
+複数シングルタイル化やオートタイル化をします。
+
+
+
+出力するマス範囲を「キャンバスサイズ」で設定します。
+
+
+
+出力パスを指定して「出力！」ボタンを押します。
+
+
+
+tresファイル、画像ファイルが作成されます。"
+
+[node name="Tile" type="HBoxContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 28.0
+margin_right = -4.0
+margin_bottom = -4.0
+__meta__ = {
+"_tab_icon": ExtResource( 5 ),
+"_tab_name": "タイル設定"
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Tile"]
+margin_right = 1272.0
+margin_bottom = 684.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h1.tres]タイル設定[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/help_03_footer.webp[/img]
+
+下部にタイル設定があります。
+
+- タイル設定ボタン
+   - [img]res://addons/tontoko_tileset/help/image-20220424214851811.png[/img]
+- 各マークに対応するZindexの設定
+- キャンバス背景は透明で出力するかどうか
+- TileSet、出力PNG画像の出力パス（res:// 形式か、OSファイルパス形式かどちらでもOK）
+- 出力ボタン！"
+text = "タイル設定
+
+
+
+下部にタイル設定があります。
+
+- タイル設定ボタン
+   - 
+- 各マークに対応するZindexの設定
+- キャンバス背景は透明で出力するかどうか
+- TileSet、出力PNG画像の出力パス（res:// 形式か、OSファイルパス形式かどちらでもOK）
+- 出力ボタン！"
+
+[node name="Image" type="HBoxContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 28.0
+margin_right = -4.0
+margin_bottom = -4.0
+__meta__ = {
+"_tab_icon": ExtResource( 6 ),
+"_tab_name": "画像追加"
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Image"]
+margin_right = 1272.0
+margin_bottom = 684.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h1.tres]画像追加[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424221304508.png[/img]
+
+- 「画像選択」　追加するタイル画像を選択します。
+
+
+- キャンバスサイズ自動調整
+  - チェックが入っていると、画像がはみだす場合にキャンバスサイズが合わせて大きくなります。
+
+- ↑で選択した画像を削除
+  - リストで選択した画像を削除します。
+  - ただし、シングルタイル化やオートタイル化したものは消えません。
+- 全ての画像を削除"
+text = "画像追加
+
+
+
+- 「画像選択」　追加するタイル画像を選択します。
+
+
+- キャンバスサイズ自動調整
+  - チェックが入っていると、画像がはみだす場合にキャンバスサイズが合わせて大きくなります。
+
+- ↑で選択した画像を削除
+  - リストで選択した画像を削除します。
+  - ただし、シングルタイル化やオートタイル化したものは消えません。
+- 全ての画像を削除"
+
+[node name="Canvas" type="HBoxContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 28.0
+margin_right = -4.0
+margin_bottom = -4.0
+__meta__ = {
+"_tab_icon": ExtResource( 7 ),
+"_tab_name": "キャンバス操作"
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Canvas"]
+margin_right = 1272.0
+margin_bottom = 684.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h1.tres]キャンバス操作[/font][/color]
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h2.tres]操作[/font][/color]
+
+タイルの位置いれかえや通行設定のマークをつけます。
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]キャンバス上の画像・マーク選択のやり方[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424221705395.png[/img]を選択するとマークが対象になります。
+
+ズーム：Ctrl+マウスホイール　または左上の+-ボタン
+
+選択：左クリック、複数選択：Ctrl+左クリック
+
+矩形選択：左ドラッグ、複数矩形選択：Ctrl+左ドラッグ
+
+削除（マークのみ）：右クリック
+
+矩形削除：右ドラッグ
+
+ズーム中はキャンバス線の表示が消えます。100%にすると表示されます。
+
+[img]res://addons/tontoko_tileset/help/help_06_canvas.webp[/img]
+
+選択中のタイルには色が付きます。選択したタイルの種類によって色は変わります。
+
+- 通常タイル＝黄色
+- 複数シングルタイル＝緑色
+- オートタイル＝青色
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h2.tres]キャンバス上部メニュー[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/help_04_canvassetting.webp[/img]
+
+- キャンバスサイズの指定をマス/ピクセルにする
+- キャンバスサイズ
+   - キャンバスサイズ外の画像、マークは画像出力されません。tilesetにも含まれません。
+- マーク色変更
+- キャンバス背景色変更
+   - [i]キャンバス背景は透明で出力[/i] にチェックが入っている場合は、この色が背景色になります。
+- グリッド色変更"
+text = "キャンバス操作
+
+操作
+
+タイルの位置いれかえや通行設定のマークをつけます。
+
+キャンバス上の画像・マーク選択のやり方
+
+を選択するとマークが対象になります。
+
+ズーム：Ctrl+マウスホイール　または左上の+-ボタン
+
+選択：左クリック、複数選択：Ctrl+左クリック
+
+矩形選択：左ドラッグ、複数矩形選択：Ctrl+左ドラッグ
+
+削除（マークのみ）：右クリック
+
+矩形削除：右ドラッグ
+
+ズーム中はキャンバス線の表示が消えます。100%にすると表示されます。
+
+
+
+選択中のタイルには色が付きます。選択したタイルの種類によって色は変わります。
+
+- 通常タイル＝黄色
+- 複数シングルタイル＝緑色
+- オートタイル＝青色
+
+キャンバス上部メニュー
+
+
+
+- キャンバスサイズの指定をマス/ピクセルにする
+- キャンバスサイズ
+   - キャンバスサイズ外の画像、マークは画像出力されません。tilesetにも含まれません。
+- マーク色変更
+- キャンバス背景色変更
+   - キャンバス背景は透明で出力 にチェックが入っている場合は、この色が背景色になります。
+- グリッド色変更"
+
+[node name="ButtonMark" type="HBoxContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 28.0
+margin_right = -4.0
+margin_bottom = -4.0
+__meta__ = {
+"_tab_icon": ExtResource( 4 ),
+"_tab_name": "ボタン・マーク説明"
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/ButtonMark"]
+margin_right = 1272.0
+margin_bottom = 684.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h1.tres]ボタン・マーク説明[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424223306555.png[/img]
+
+[b]マークは、ドラッグでまとめてマークできます。[/b]
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]各マークについて[/font][/color]
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]画像移動[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424221647185.png[/img]
+
+ショートカットキー：Q
+
+画像の移動、選択をします。
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]マーク移動[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424221705395.png[/img]
+
+ショートカットキー：W
+
+マークの移動、選択をします。
+
+
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]丸マーク[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424222231312.png[/img]
+
+ショートカットキー：１
+
+通行可能タイルにします。印ペイントなしと全く同じです。
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]バツマーク[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424222240755.png[/img]
+
+ショートカットキー：２
+
+タイルを通行不可にします。※1
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]星マーク[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424222253236.png[/img]
+
+ショートカットキー：３
+
+常にキャラの上に表示します。※1
+
+下をくぐって通れます。
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]星マーク[/font][/color]２
+
+[img]res://addons/tontoko_tileset/help/image-20220424222304900.png[/img]
+
+ショートカットキー：４
+
+常にキャラの上に表示します。※1
+
+下をくぐって通れません。
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]三角マーク[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424222314035.png[/img]
+
+ショートカットキー：５
+
+後ろに行くと隠れます。※1
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]詳細バツマーク[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424222404595.png[/img]
+
+ショートカットキー：６
+
+マークを削除します。
+
+1/2, 3/1, 1/4 サイズで通行禁止にします。
+
+他マークと同マスに置けます。
+
+そのマスのすべての通行設定は詳細バツマークの内容になります。
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]消しゴム[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424222508571.png[/img]
+
+ショートカットキー：E
+
+マークを削除します。
+
+ペイントツール中に右ドラッグでも削除可能です。
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]マスカーソル[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424222521819.png[/img]
+
+ショートカットキー：C
+
+マスカーソルを移動します。
+
+キャンバスへの画像追加はマスカーソル位置に追加されます。
+
+
+
+※1 Zindexが変わるというだけです。重なり順については下部のZindexの値が入ります。キャラがZindex=0という想定です。必要なら変更してください。
+
+
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h3.tres]2列目[/font][/color]
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]移動ロック[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424222636347.png[/img]
+
+ショートカットキー：Ｌ
+
+画像がドラッグで移動しないようにします。
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]シングルタイル化[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424222645315.png[/img]
+
+ショートカットキー：Ｓ
+
+選択中の複数画像タイルが矩形の場合にボタンを押すことができます。
+
+複数タイルを１つのシングルタイルにします。
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]オートタイル化[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424222656139.png[/img]
+
+ショートカットキー：Ａ
+
+選択中の複数画像タイルをオートタイルにします。
+
+対応…1x3, 3x1, 3x2, 3x3, 3x3(真ん中穴)
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]削除[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424222804699.png[/img]
+
+ショートカットキー：なし
+
+選択中の画像またはマークを削除します。"
+text = "ボタン・マーク説明
+
+
+
+マークは、ドラッグでまとめてマークできます。
+
+各マークについて
+
+画像移動
+
+
+
+ショートカットキー：Q
+
+画像の移動、選択をします。
+
+マーク移動
+
+
+
+ショートカットキー：W
+
+マークの移動、選択をします。
+
+
+
+丸マーク
+
+
+
+ショートカットキー：１
+
+通行可能タイルにします。印ペイントなしと全く同じです。
+
+バツマーク
+
+
+
+ショートカットキー：２
+
+タイルを通行不可にします。※1
+
+星マーク
+
+
+
+ショートカットキー：３
+
+常にキャラの上に表示します。※1
+
+下をくぐって通れます。
+
+星マーク２
+
+
+
+ショートカットキー：４
+
+常にキャラの上に表示します。※1
+
+下をくぐって通れません。
+
+三角マーク
+
+
+
+ショートカットキー：５
+
+後ろに行くと隠れます。※1
+
+詳細バツマーク
+
+
+
+ショートカットキー：６
+
+マークを削除します。
+
+1/2, 3/1, 1/4 サイズで通行禁止にします。
+
+他マークと同マスに置けます。
+
+そのマスのすべての通行設定は詳細バツマークの内容になります。
+
+消しゴム
+
+
+
+ショートカットキー：E
+
+マークを削除します。
+
+ペイントツール中に右ドラッグでも削除可能です。
+
+マスカーソル
+
+
+
+ショートカットキー：C
+
+マスカーソルを移動します。
+
+キャンバスへの画像追加はマスカーソル位置に追加されます。
+
+
+
+※1 Zindexが変わるというだけです。重なり順については下部のZindexの値が入ります。キャラがZindex=0という想定です。必要なら変更してください。
+
+
+
+2列目
+
+移動ロック
+
+
+
+ショートカットキー：Ｌ
+
+画像がドラッグで移動しないようにします。
+
+シングルタイル化
+
+
+
+ショートカットキー：Ｓ
+
+選択中の複数画像タイルが矩形の場合にボタンを押すことができます。
+
+複数タイルを１つのシングルタイルにします。
+
+オートタイル化
+
+
+
+ショートカットキー：Ａ
+
+選択中の複数画像タイルをオートタイルにします。
+
+対応…1x3, 3x1, 3x2, 3x3, 3x3(真ん中穴)
+
+削除
+
+
+
+ショートカットキー：なし
+
+選択中の画像またはマークを削除します。"
