@@ -13,20 +13,21 @@
 ---
 英語 (English)
 
-Tontoko Tile is an add-on that makes it easy to create Godot tile sets.
+**Tontoko Tile Supports English/Japanese GUI**
+
+Tontoko Tile is godot addon that makes it easy to create Godot Tileset.
 
 Read the png file (s) and output the tileset tres file and the final png file.
 
-It has the following functions.
+It has the following this tool feature.
 
 * Arrangement and sorting of tile images
-* Collision settings for cells
-* Traffic can be set by painting the mark
-* Zindex and YSort can be set by the mark
+* Collision settings for tile, Character Passage can be set by painting the mark
+* ZIndex and YSort can be set by the mark
 * Auto tile can be set
 Corresponding rectangular mass format 1x3, 3x1, 3x2, 3x3, 3x3 (middle hole)
-* Supports Udita format auto tile images and Tsukuru format auto tile images.
-* Multiple rectangular cells can be registered as a single tile
+* Supports "Wolf Editor" and "RPGMaker" style AutoTile.
+* Multiple rectangular cells can be registered as a SingleTile
 
 ### To install
 download it as a ZIP archive.<br>Extract and move the addons/ directory it contains into your project folder. Then, enable the plugin in project settings.<br>And reload godot editor.
@@ -43,8 +44,7 @@ pngファイルを読み込み（複数可）、タイルセットのtresファ�
 以下の機能があります。
 
 * タイル画像の配置、並び替え
-* セルに対するコリジョンの設定
-* マークを塗ることで通行設定が可能
+* セルに対するコリジョンの設定, マークを塗ることで通行設定が可能
 * マークによってZindex、YSortを設定可能
 * オートタイルを設定可能  
 対応矩形マス形式　1x3, 3x1, 3x2, 3x3, 3x3(真ん中穴)
