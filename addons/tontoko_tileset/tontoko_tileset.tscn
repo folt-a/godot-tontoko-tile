@@ -1702,7 +1702,7 @@ margin_bottom = 720.0
 window_title = "ファイルを開く"
 resizable = true
 mode = 1
-filters = PoolStringArray( "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;" )
+filters = PoolStringArray( "*.png ;" )
 show_hidden_files = true
 
 [node name="MarginC_Setting" type="MarginContainer" parent="."]

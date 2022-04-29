@@ -1,0 +1,65 @@
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h1.tres]キャンバス操作[/font][/color]
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h2.tres]操作[/font][/color]
+
+タイルの位置いれかえや通行設定のマークをつけます。
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]キャンバス上の画像・マーク選択のやり方[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424221705395.png[/img]を選択するとマークが対象になります。
+
+ズーム：Ctrl+マウスホイール　または左上の+-ボタン
+
+選択：左クリック、複数選択：Ctrl+左クリック
+
+矩形選択：左ドラッグ、複数矩形選択：Ctrl+左ドラッグ
+
+削除（マークのみ）：右クリック
+
+矩形削除：右ドラッグ
+
+ズーム中はキャンバス線の表示が消えます。100%にすると表示されます。
+
+[img]res://addons/tontoko_tileset/help/help_06_canvas.webp[/img]
+
+選択中のタイルには色が付きます。選択したタイルの種類によって色は変わります。
+
+- 通常タイル＝黄色
+- 複数シングルタイル＝緑色
+- オートタイル＝青色
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h2.tres]キャンバス上部メニュー[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/help_04_canvassetting.webp[/img]
+
+- キャンバスサイズの指定をマス/ピクセルにする
+- キャンバスサイズ
+   - キャンバスサイズ外の画像、マークは画像出力されません。tilesetにも含まれません。
+- マーク色変更
+- キャンバス背景色変更
+   - [i]キャンバス背景は透明で出力[/i] にチェックが入っている場合は、この色が背景色になります。
+- グリッド色変更
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

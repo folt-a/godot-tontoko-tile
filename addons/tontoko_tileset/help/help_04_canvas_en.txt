@@ -1,0 +1,67 @@
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h1.tres]Edit Canvas Tiles[/font][/color]
+
+Edit Tiles positions and Set Passage Marks
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]How to select images/marks on the canvas[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220424221705395.png[/img]=Mark
+
+Zoom : Ctrl + Wheel or +- buttons
+
+Select : Left Click
+
+Multi Select : Ctrl + Left Click
+
+Rectangle Select : Left Dragging
+
+Multi Rectangle Select : Ctrl + Left Dragging
+
+Delete(only Mark) : Right Click
+
+Rectangle Delete : Right Dragging
+
+The canvas line are not displayed while zooming. It is displayed when it is set to 100%.
+
+[img]res://addons/tontoko_tileset/help/help_06_canvas.webp[/img]
+
+The selected tile will be outline colored. The color will change depending on the type of tile selected.
+
+- Normal tile = Yellow
+- MultiSingleTile = Green
+- AutoTile = Blue
+
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h2.tres]Canvas top menu[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220429205847560.png[/img]
+
+- Specify canvas size as cell / pixel
+- CanvasSize
+  - Images and Marks outside the canvas size will not be export. It is not included in the tileset.
+- change Mark color.
+- change Canvas Bg color.
+  - "if image is over canvas size, canvas size change over." is checked, exported background color is this color.
+- change Grid line color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

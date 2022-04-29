@@ -54,10 +54,6 @@ config/name="tontoko_tile"
 run/main_scene="res://addons/tontoko_tileset/tontoko_tileset.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-DebugStatus="*res://DebugStatus.tscn"
-
 [display]
 
 window/size/width=1280

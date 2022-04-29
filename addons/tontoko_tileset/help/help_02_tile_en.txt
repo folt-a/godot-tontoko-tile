@@ -1,0 +1,34 @@
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h1.tres]Tile Settings[/font][/color]
+
+[img]res://addons/tontoko_tileset/help/image-20220429205940622.png[/img]
+
+tile setting Menu at the bottom.
+
+- "Tile Setting"Button
+  - [img]res://addons/tontoko_tileset/help/image-20220424214851811.png[/img]
+- Zindex setting corresponding to the mark.
+- Whether to output the canvas background transparently
+- TileSet、png output pathes（res:// style or OS file path style）
+- EXPORT!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

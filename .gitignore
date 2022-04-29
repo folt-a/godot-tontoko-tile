@@ -24,5 +24,7 @@ data_*/
 #build
 build/
 
+batch/
+
 #tmp file
 *.log

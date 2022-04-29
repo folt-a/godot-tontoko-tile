@@ -89,7 +89,8 @@ var tool_btn_group:ButtonGroup
 
 func _ready() -> void:
 	TranslationServer.set_locale(OS.get_locale())
-	print(OS.get_locale())
+#	TranslationServer.set_locale("en")
+#	print(OS.get_locale())
 #	DebugStatus.add_stat("_graph_mark.mark_cell_dic", self, "_graph_mark.mark_cell_dic", false)
 	# Tab
 	$VBoxC/TabC.current_tab = 0
@@ -117,18 +118,11 @@ func _ready() -> void:
 		_opt_grid_canvas_px_or_cell.add_item("ピクセル",0)
 		_opt_grid_canvas_px_or_cell.add_item("マス",1)
 	else:
-		_opt_tile_type.add_icon_item(normal_tile_icon,"Normal Tile",0)
-		_opt_tile_type.add_icon_item(wolf_icon,"Auto WOLF 16px",1)
-		_opt_tile_type.add_icon_item(wolf_icon,"Auto WOLF 32px",2)
-		_opt_tile_type.add_icon_item(wolf_icon,"Auto WOLF 48px",3)
-		_opt_tile_type.add_icon_item(rpg_icon,"Auto RPGMaker 32px VX ",4)
-		_opt_tile_type.add_icon_item(rpg_icon,"Auto RPGMaker 48px MVMZ",5)
-		
+		_opt_tile_type.add_icon_item(normal_tile_icon,"Normal_Tile",0)
+		_opt_tile_type.add_icon_item(wolf_icon,"AutoTile_WOLF",1)
+		_opt_tile_type.add_icon_item(rpg_icon,"AutoTile_RPGMaker ",2)
 		_opt_grid_canvas_px_or_cell.add_item("Pixel",0)
 		_opt_grid_canvas_px_or_cell.add_item("Cell",1)
-		
-#	$VBoxC/TabC/Help.set_text()
-		
 	_opt_grid_canvas_px_or_cell.select(1)
 	# Grid位置
 	_graph.CellSize = CellSize
@@ -140,6 +134,10 @@ func _ready() -> void:
 	_graph_paint.scroll_offset = Vector2(-CellSize*2,-CellSize*2)
 	
 	_grid_canvas.rect_position = -_graph.scroll_offset
+	
+	# 翻訳
+	if TranslationServer.get_locale() != "ja_JP":
+		translate()
 
 #	保持データ復元
 	_setting_restore()
@@ -661,8 +659,8 @@ func _on_OptionButtonPxOrCell_item_selected(index):
 			$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCHeight/LabelPxOrCell.text = "マス"
 			$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCWidth/LabelPxOrCell.text = "マス"
 		else:
-			$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCHeight/LabelPxOrCell.text = "マス"
-			$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCWidth/LabelPxOrCell.text = "マス"
+			$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCHeight/LabelPxOrCell.text = translation.text_en_011
+			$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCWidth/LabelPxOrCell.text = translation.text_en_011
 		$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCWidth/SpinBoxWidth.value = int($VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCWidth/SpinBoxWidth.value / CellSize)
 		$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCHeight/SpinBoxHeight.value = int($VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCHeight/SpinBoxHeight.value / CellSize)
 
@@ -1264,4 +1262,93 @@ func _on_TabC_tab_changed(tab):
 #		$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC.visible = false
 		$VBoxC/MarginC.visible = false
 		pass
+
+var translation = preload("res://addons/tontoko_tileset/translation_en.gd").new()
+func translate():
+	$Panel/Label.text = translation.text_en_002
+	$VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/SelectButton.text = translation.text_en_004
+	$VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/CheckBoxCanvasSizeFit.text = translation.text_en_006
+	$VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/CheckBoxCanvasSizeFit.hint_tooltip = translation.hint_tooltip_en_001
+	$VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/RemoveItemButton.text = translation.text_en_009
+	$VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/RemoveAllItemButton.text = translation.text_en_010
+	$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Move.hint_tooltip = translation.hint_tooltip_en_002
+	$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/MarkMove.hint_tooltip = translation.hint_tooltip_en_003
+	$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Maru.hint_tooltip = translation.hint_tooltip_en_004
+	$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Batu.hint_tooltip = translation.hint_tooltip_en_005
+	$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Hoshi.hint_tooltip = translation.hint_tooltip_en_006
+	$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Hoshi2.hint_tooltip = translation.hint_tooltip_en_007
+	$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Sankaku.hint_tooltip = translation.hint_tooltip_en_008
+	$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/BatuGrid.hint_tooltip = translation.hint_tooltip_en_009
+	$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Keshigomu.hint_tooltip = translation.hint_tooltip_en_010
+	$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC/Cursor.hint_tooltip = translation.hint_tooltip_en_011
+	$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC2/VBoxC/MoveLock.hint_tooltip = translation.hint_tooltip_en_012
+	$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC2/VBoxC/SingleTileConcat.hint_tooltip = translation.hint_tooltip_en_013
+	$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC2/VBoxC/AutoTileRecog.hint_tooltip = translation.hint_tooltip_en_014
+	$VBoxC/TabC/Tile/Main/Tools/HBoxC/MC2/VBoxC/Trash.hint_tooltip = translation.hint_tooltip_en_015
+	
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC2X2/TL.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC2X2/TR.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC2X2/BL.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC2X2/BR.hint_tooltip = translation.hint_tooltip_en_016
+	
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3/TL.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3/TC.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3/TR.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3/CL.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3/CC.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3/CR.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3/BL.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3/BC.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC3X3/BR.hint_tooltip = translation.hint_tooltip_en_016
+	
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/TLBL.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/TLBR.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/TLTL.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/TLTR.hint_tooltip = translation.hint_tooltip_en_016
+	
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/TRBL.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/TRBR.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/TRTL.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/TRTR.hint_tooltip = translation.hint_tooltip_en_016
+	
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/BLBL.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/BLBR.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/BLTL.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/BLTR.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/BRBL.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/BRBR.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/BRTL.hint_tooltip = translation.hint_tooltip_en_016
+	$VBoxC/TabC/Tile/Main/Tools/BatuGrid/GridC4X4/BRTR.hint_tooltip = translation.hint_tooltip_en_016
+	
+	$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/Label.text = translation.text_en_012
+	$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCWidth/Label.text = translation.text_en_013
+	$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCWidth/LabelPxOrCell.text = translation.text_en_011
+	$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCHeight/Label.text = translation.text_en_014
+	$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCHeight/LabelPxOrCell.text = translation.text_en_011
+	$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCPaintColor/Label.text = translation.text_en_015
+	$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCBgColor/Label.text = translation.text_en_016	
+	$VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCGridLineColor/Label.text = translation.text_en_017
+	$VBoxC/MarginC/Footer/ButtonSetting.text = translation.text_en_018
+	$VBoxC/MarginC/Footer/VBoxContainer/GridContainer/LabelZIndex.text = translation.text_en_020
+	$VBoxC/MarginC/Footer/VBoxContainer/GridContainer/SpinBoxZIndexMaru.hint_tooltip = translation.hint_tooltip_en_017
+	
+	$VBoxC/MarginC/Footer/VBoxContainer/GridContainer/LabelZIndex_2.text = translation.text_en_021
+	$VBoxC/MarginC/Footer/VBoxContainer/GridContainer/SpinBoxZIndexHoshi.hint_tooltip = translation.hint_tooltip_en_019
+	
+	$VBoxC/MarginC/Footer/VBoxContainer/GridContainer/LabelZIndex_3.text = translation.text_en_022
+	$VBoxC/MarginC/Footer/VBoxContainer/GridContainer/SpinBoxZIndexSankaku.hint_tooltip = translation.hint_tooltip_en_018
+	
+	$VBoxC/MarginC/Footer/VBoxContainer/GridContainer/LabelZIndex_4.text = translation.text_en_023
+	$VBoxC/MarginC/Footer/VBoxContainer/GridContainer/SpinBoxZIndexHoshi2.hint_tooltip = translation.hint_tooltip_en_020
+	
+	$VBoxC/MarginC/Footer/CheckButtonBgExportTransparent.text = translation.text_en_024
+	$VBoxC/MarginC/Footer/GridContainer/LabelTileSetName.text = translation.text_en_025
+	$VBoxC/MarginC/Footer/GridContainer/LabelTileSetName_2.text = translation.text_en_026
+	$VBoxC/MarginC/Footer/PanelC/ButtonExport.text = translation.text_en_027
+	$MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCSetumei/Label.text = translation.text_en_016
+	$MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCSetumei2/Label.text = translation.text_en_028
+	$MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCCell/HBoxCCell/Label.text = translation.text_en_029
+	$MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCAuto_2/ButtonSettingClose.text = translation.text_en_031
+
+
 
