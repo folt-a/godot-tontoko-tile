@@ -1,6 +1,40 @@
-# Tontoko Tile - Godot TileSet Easy Maker
+# Tontoko Tile（とんとこタイル） - Godot TileSet Easy Maker
 
 ![image-20220425004254572](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220425004254572.png)
+
+オートタイルはこんな感じに作るよ動画（仮）　AutoTile Movie!
+
+[開発中の動画１ dev movie1 in Twitter](https://twitter.com/i/status/1495674099594850309)
+
+[開発中の動画２ dev movie2 in Twitter](https://twitter.com/i/status/1495309899865096192)
+
+[#TODO ここに動画を載せる]
+
+---
+英語 (English)
+
+Tontoko Tile is an add-on that makes it easy to create Godot tile sets.
+
+Read the png file (s) and output the tileset tres file and the final png file.
+
+It has the following functions.
+
+* Arrangement and sorting of tile images
+* Collision settings for cells
+* Traffic can be set by painting the mark
+* Zindex and YSort can be set by the mark
+* Auto tile can be set
+Corresponding rectangular mass format 1x3, 3x1, 3x2, 3x3, 3x3 (middle hole)
+* Supports Udita format auto tile images and Tsukuru format auto tile images.
+* Multiple rectangular cells can be registered as a single tile
+
+### To install
+download it as a ZIP archive.<br>Extract and move the addons/ directory it contains into your project folder. Then, enable the plugin in project settings.<br>And reload godot editor.
+
+**[⇓How To Use](https://github.com/folt-a/tontoko_tile#how-to-use)** Document also in the add-on
+
+---
+日本語 (Japanese)
 
 とんとこタイルはGodotのタイルセットをかんたんに作るアドオンです。
 
@@ -8,31 +42,21 @@ pngファイルを読み込み（複数可）、タイルセットのtresファ�
 
 以下の機能があります。
 
-- タイル画像の配置、並び替え
-- セルに対するコリジョンの設定
-- マークを塗ることで通行設定が可能
-- マークによってZindex、YSortを設定可能
-- オートタイルを設定可能
-  - 対応矩形マス形式　1x3, 3x1, 3x2, 3x3, 3x3(真ん中穴)
-  - 他、ウディタ形式のオートタイル画像、ツクール形式のオートタイル画像に対応しています。
-- 複数矩形マスをシングルタイルとして登録可能
+* タイル画像の配置、並び替え
+* セルに対するコリジョンの設定
+* マークを塗ることで通行設定が可能
+* マークによってZindex、YSortを設定可能
+* オートタイルを設定可能  
+対応矩形マス形式　1x3, 3x1, 3x2, 3x3, 3x3(真ん中穴)
+* ウディタ形式のオートタイル画像、ツクール形式のオートタイル画像に対応。
+* 複数矩形マスをシングルタイルとして登録可能
 
+### インストール方法
+tontoko_tile を addons ディレクトリに配置します。<br>プロジェクト設定→プラグインから TontokoTile を有効化します。<br>その後プロジェクトを再起動してアドオンを反映させます。
 
+**[⇓使い方（日本語）](https://github.com/folt-a/tontoko_tile#%E4%BD%BF%E3%81%84%E6%96%B9)** ドキュメントはアドオン内でもみれます
 
-[#TODO ここに動画を載せる]
-
-オートタイルはこんな感じに作るよ動画（仮）
-
-[開発中の動画１](https://twitter.com/i/status/1495674099594850309)
-
-[開発中の動画２](https://twitter.com/i/status/1495309899865096192)
-
-
-[#TODO ここに英語を書く]
-
-Tontoko Tile is Godot TileSet make tool.
-
-
+---
 
 # How to Use
 
@@ -310,7 +334,7 @@ Delete selected Image or Mark.
 
 
 
-## 使い方
+# 使い方
 
 ---
 
