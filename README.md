@@ -1,4 +1,4 @@
-# Tontoko Tile（とんとこタイル） - Godot TileSet Easy Maker
+# Tontoko Tile - Godot TileSet Easy Maker
 
 ![image-20220425004254572](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220425004254572.png)
 
