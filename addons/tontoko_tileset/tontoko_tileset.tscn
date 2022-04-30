@@ -457,6 +457,7 @@ icon = ExtResource( 33 )
 expand_icon = true
 
 [node name="MarkMove" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
+visible = false
 margin_top = 52.0
 margin_right = 40.0
 margin_bottom = 92.0
@@ -472,15 +473,16 @@ icon = ExtResource( 6 )
 expand_icon = true
 
 [node name="HSeparator" type="HSeparator" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
-margin_top = 104.0
+margin_top = 52.0
 margin_right = 40.0
-margin_bottom = 109.0
+margin_bottom = 57.0
 custom_constants/separation = 5
 
 [node name="Maru" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
 margin_top = 121.0
+margin_top = 69.0
 margin_right = 40.0
-margin_bottom = 161.0
+margin_bottom = 109.0
 rect_min_size = Vector2( 40, 40 )
 hint_tooltip = "ショートカットキー：１
 通行可能タイルにします。
@@ -494,9 +496,9 @@ icon = ExtResource( 17 )
 expand_icon = true
 
 [node name="Batu" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
-margin_top = 173.0
+margin_top = 121.0
 margin_right = 40.0
-margin_bottom = 213.0
+margin_bottom = 161.0
 rect_min_size = Vector2( 40, 40 )
 hint_tooltip = "ショートカットキー：２
 タイルを通行不可にします。"
@@ -509,9 +511,9 @@ icon = ExtResource( 19 )
 expand_icon = true
 
 [node name="Hoshi" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
-margin_top = 225.0
+margin_top = 173.0
 margin_right = 40.0
-margin_bottom = 265.0
+margin_bottom = 213.0
 rect_min_size = Vector2( 40, 40 )
 hint_tooltip = "ショートカットキー：３
 常にキャラの上に表示します。
@@ -525,9 +527,9 @@ icon = ExtResource( 13 )
 expand_icon = true
 
 [node name="Hoshi2" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
-margin_top = 277.0
+margin_top = 225.0
 margin_right = 40.0
-margin_bottom = 317.0
+margin_bottom = 265.0
 rect_min_size = Vector2( 40, 40 )
 hint_tooltip = "ショートカットキー：４
 常にキャラの上に表示します。
@@ -541,9 +543,9 @@ icon = ExtResource( 28 )
 expand_icon = true
 
 [node name="Sankaku" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
-margin_top = 329.0
+margin_top = 277.0
 margin_right = 40.0
-margin_bottom = 369.0
+margin_bottom = 317.0
 rect_min_size = Vector2( 40, 40 )
 hint_tooltip = "ショートカットキー：５
 後ろに行くと隠れます。"
@@ -556,15 +558,15 @@ icon = ExtResource( 14 )
 expand_icon = true
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
-margin_top = 381.0
+margin_top = 329.0
 margin_right = 40.0
-margin_bottom = 386.0
+margin_bottom = 334.0
 custom_constants/separation = 5
 
 [node name="BatuGrid" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
-margin_top = 398.0
+margin_top = 346.0
 margin_right = 40.0
-margin_bottom = 438.0
+margin_bottom = 386.0
 rect_min_size = Vector2( 40, 40 )
 hint_tooltip = "ショートカットキー：６
 マークを削除します。
@@ -581,15 +583,15 @@ icon = ExtResource( 32 )
 expand_icon = true
 
 [node name="HSeparator3" type="HSeparator" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
-margin_top = 450.0
+margin_top = 398.0
 margin_right = 40.0
-margin_bottom = 455.0
+margin_bottom = 403.0
 custom_constants/separation = 5
 
 [node name="Keshigomu" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
-margin_top = 467.0
+margin_top = 415.0
 margin_right = 40.0
-margin_bottom = 507.0
+margin_bottom = 455.0
 rect_min_size = Vector2( 40, 40 )
 hint_tooltip = "ショートカットキー：E
 マークを削除します。
@@ -603,9 +605,9 @@ icon = ExtResource( 20 )
 expand_icon = true
 
 [node name="Cursor" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
-margin_top = 519.0
+margin_top = 467.0
 margin_right = 40.0
-margin_bottom = 559.0
+margin_bottom = 507.0
 rect_min_size = Vector2( 40, 40 )
 hint_tooltip = "ショートカットキー：C
 マスカーソルを移動します。
@@ -1386,6 +1388,7 @@ _graph_edit_mark_path = NodePath("../GraphEditMark")
 CellSize = 32
 
 [node name="TopLeftGraphNode" type="GraphNode" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditPaint"]
+visible = false
 margin_left = 64.0
 margin_top = 64.0
 margin_right = 104.0
@@ -1405,6 +1408,7 @@ __meta__ = {
 }
 
 [node name="BottomRightGraphNode" type="GraphNode" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditPaint"]
+visible = false
 margin_left = 64.0
 margin_top = 64.0
 margin_right = 104.0
@@ -1702,7 +1706,7 @@ margin_bottom = 720.0
 window_title = "ファイルを開く"
 resizable = true
 mode = 1
-filters = PoolStringArray( "*.png ;" )
+filters = PoolStringArray( "*.png ;", "*.png ;", "*.png ;" )
 show_hidden_files = true
 
 [node name="MarginC_Setting" type="MarginContainer" parent="."]

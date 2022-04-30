@@ -14,15 +14,6 @@ ShortcutKey : Q
 
 Move and Select Images.
 
-[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]Move Marks[/font][/color]
-
-[img]res://addons/tontoko_tileset/help/image-20220424221705395.png[/img]
-
-ShortcutKey : W
-
-Move and Select Marks.
-
-
 
 [color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]Passable Mark[/font][/color]
 

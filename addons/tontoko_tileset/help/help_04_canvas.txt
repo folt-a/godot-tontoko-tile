@@ -4,9 +4,7 @@
 
 タイルの位置いれかえや通行設定のマークをつけます。
 
-[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]キャンバス上の画像・マーク選択のやり方[/font][/color]
-
-[img]res://addons/tontoko_tileset/help/image-20220424221705395.png[/img]を選択するとマークが対象になります。
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]キャンバス上の画像選択のやり方[/font][/color]
 
 ズーム：Ctrl+マウスホイール　または左上の+-ボタン
 

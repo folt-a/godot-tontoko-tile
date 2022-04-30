@@ -14,16 +14,6 @@
 
 画像の移動、選択をします。
 
-[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]マーク移動[/font][/color]
-
-[img]res://addons/tontoko_tileset/help/image-20220424221705395.png[/img]
-
-ショートカットキー：W
-
-マークの移動、選択をします。
-
-
-
 [color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]丸マーク[/font][/color]
 
 [img]res://addons/tontoko_tileset/help/image-20220424222231312.png[/img]

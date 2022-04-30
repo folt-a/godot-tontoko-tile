@@ -2,9 +2,7 @@
 
 Edit Tiles positions and Set Passage Marks
 
-[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]How to select images/marks on the canvas[/font][/color]
-
-[img]res://addons/tontoko_tileset/help/image-20220424221705395.png[/img]=Mark
+[color=#ffffffff][font=res://addons/tontoko_tileset/fonts/h4.tres]How to select images on the canvas[/font][/color]
 
 Zoom : Ctrl + Wheel or +- buttons
 

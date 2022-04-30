@@ -1351,4 +1351,9 @@ func translate():
 	$MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCAuto_2/ButtonSettingClose.text = translation.text_en_031
 
 
-
+# For Debug
+#func _process(delta):
+#	var strr = ""
+#	for keyy in _graph_mark.mark_cell_dic.keys():
+#		strr = strr + "[" + String(keyy.x) + "," + String(keyy.y) + "]"
+#	$Panel/Label.text = strr

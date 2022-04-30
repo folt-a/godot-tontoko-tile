@@ -132,9 +132,9 @@ tile setting Menu at the bottom.
 
 Edit Tiles positions and Set Passage Marks
 
-#### How to select images/marks on the canvas
+#### How to select images on the canvas
 
-![image-20220424221647185](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424221647185.png)=Image![image-20220424221705395](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424221705395.png)=Mark
+![image-20220424221647185](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424221647185.png)
 
 Zoom : Ctrl + Wheel or +- buttons
 
@@ -187,16 +187,6 @@ The selected tile will be outline colored. The color will change depending on th
 ShortcutKey : Q
 
 Move and Select Images.
-
-#### Move Marks
-
-![image-20220424221705395](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424221705395.png)
-
-ShortcutKey : W
-
-Move and Select Marks.
-
-
 
 #### Passable Mark
 
@@ -410,9 +400,9 @@ tresファイル、画像ファイルが作成されます。
 
 タイルの位置いれかえや通行設定のマークをつけます。
 
-#### キャンバス上の画像・マーク選択のやり方
+#### キャンバス上の画像選択のやり方
 
-![image-20220424221647185](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424221647185.png)を選択すると画像を、![image-20220424221705395](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424221705395.png)を選択するとマークが対象になります。
+![image-20220424221647185](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424221647185.png)
 
 ズーム：Ctrl+マウスホイール　または左上の+-ボタン
 
@@ -461,16 +451,6 @@ tresファイル、画像ファイルが作成されます。
 ショートカットキー：Q
 
 画像の移動、選択をします。
-
-#### マーク移動
-
-![image-20220424221705395](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220424221705395.png)
-
-ショートカットキー：W
-
-マークの移動、選択をします。
-
-
 
 #### 丸マーク
 
