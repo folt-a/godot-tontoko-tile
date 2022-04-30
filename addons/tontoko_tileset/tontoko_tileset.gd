@@ -988,7 +988,7 @@ func _on_ButtonExport_pressed():
 			var shapes = _edit_painted_tile_autotiles(node.offset,merged_tileset,new_tile_id,src)
 			merged_tileset.tile_set_shapes(new_tile_id,shapes)
 
-		elif node.has_meta("multi_single") and src.get_height() != CellSize and src.get_width() != CellSize:
+		elif node.has_meta("multi_single") and !(src.get_height() == CellSize and src.get_width() == CellSize):
 			merged_tileset.tile_set_tile_mode(new_tile_id,TileSet.SINGLE_TILE)
 			# Y=一番↓、X=真ん中が塗りセルにする？ TODO
 			# とりあえず強制グリッドにする
