@@ -821,8 +821,11 @@ func concat_image_bottom(base: Image, ext: Image):
 # 2次元配列
 func cut_Spritesheet(image:Image,cut_size:Vector2) -> Array:
 	
-	if image.get_width() % int(cut_size.x) != 0 or image.get_height() % int(cut_size.y) != 0:
-		printerr("わりきれないが？？？")
+	if image.get_width() % int(cut_size.x) != 0:
+		printerr(String(image.get_width()) + " は " + String(int(cut_size.x)) + " の倍数にしてください。")
+		return []
+	if image.get_height() % int(cut_size.y) != 0:
+		printerr(String(image.get_height()) + " は " + String(int(cut_size.y)) + " の倍数にしてください。")
 		return []
 	
 	var col_count = image.get_width() / cut_size.x
