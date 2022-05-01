@@ -491,6 +491,14 @@ func _setting_restore() -> void:
 			HalfCellSize = int(data.cell_size) / 2
 			_graph.CellSize = CellSize
 			_graph_mark.CellSize = CellSize
+			_graph.snap_distance = CellSize
+			_graph_mark.snap_distance = CellSize
+			_graph_paint.snap_distance = CellSize
+			_graph_cursor.rect_size = Vector2(CellSize, CellSize)
+			_graph_cursor.rect_min_size = Vector2(CellSize, CellSize)
+			_graph_cursor.get_child(0).rect_size = Vector2(CellSize, CellSize)
+			_graph_cursor.get_child(0).rect_min_size = Vector2(CellSize, CellSize)
+			
 		if data and data.has("auto_tile_opt"):
 			_opt_tile_type.select(int(data.auto_tile_opt))
 		if data and data.has("grid_canvas_px_or_cell"):
@@ -1351,9 +1359,4 @@ func translate():
 	$MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCAuto_2/ButtonSettingClose.text = translation.text_en_031
 
 
-# For Debug
-#func _process(delta):
-#	var strr = ""
-#	for keyy in _graph_mark.mark_cell_dic.keys():
-#		strr = strr + "[" + String(keyy.x) + "," + String(keyy.y) + "]"
-#	$Panel/Label.text = strr
+
