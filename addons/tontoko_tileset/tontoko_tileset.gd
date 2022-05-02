@@ -162,6 +162,10 @@ func _on_FileDialog_files_selected(paths:PoolStringArray) -> void:
 		loaded_image = _add_image(path)
 		_is_row_first_image = false
 	$VBoxC/TabC/Tile/Main/Images/MarginC/VBoxC/imageInfo/Preview.texture = loaded_image
+	# 自動的に出力ファイル名を同名で埋める
+	
+	$VBoxC/MarginC/Footer/GridContainer/LineEditTileSetName.text = paths[0].get_file().trim_suffix('.' + paths[0].get_file().get_extension())
+	$VBoxC/MarginC/Footer/GridContainer/LineEditPNGName.text = paths[0].get_file().trim_suffix('.' + paths[0].get_file().get_extension())
 
 func _add_image(path:String) -> Texture:
 	# TODO
@@ -520,6 +524,10 @@ func _setting_restore() -> void:
 				_check_canvas_size_fit.pressed = true
 			else:
 				_check_canvas_size_fit.pressed = false
+		if data and data.has("tileset_dir"):
+			$VBoxC/MarginC/Footer/GridContainer_Dir/LineEditTileSetDirName.text = data.tileset_dir
+		if data and data.has("png_dir"):
+			$VBoxC/MarginC/Footer/GridContainer_Dir/LineEditPNGName.text = data.png_dir
 		fl.close()
 		_setting_changed()
 
@@ -551,7 +559,9 @@ func _setting_changed() -> void:
 		grid_canvas_size_width = grid_canvas_size.x,
 		grid_canvas_size_height = grid_canvas_size.y,
 		grid_canvas_color = _grid_canvas.color.to_html(),
-		canvas_size_fit = is_check_canvas_size_fit_str
+		canvas_size_fit = is_check_canvas_size_fit_str,
+		tileset_dir = $VBoxC/MarginC/Footer/GridContainer_Dir/LineEditTileSetDirName.text,
+		png_dir = $VBoxC/MarginC/Footer/GridContainer_Dir/LineEditPNGName.text
 	}
 	
 	fl.open("res://addons/tontoko_tileset/save.dat",File.WRITE_READ)
@@ -576,6 +586,12 @@ func _on_ButtonSettingClose_pressed():
 	$MarginC_Setting/PopupDialogSetting.hide()
 
 func _on_OptionButtonWorT_item_selected(_index):
+	_setting_changed()
+
+func _on_LineEditTileSetDirName_text_changed(new_text):
+	_setting_changed()
+
+func _on_LineEditPNGName_text_changed(new_text):
 	_setting_changed()
 
 func _on_GridRect_gui_input(event):
@@ -704,7 +720,7 @@ func _on_ButtonRemoveItem_pressed():
 	_graph.set_cursor_cell(Vector2(0,CanvasMaxY))
 
 func _on_ButtonRemoveAll_pressed():
-	
+	_item_list.clear()
 	for node in _graph.get_children():
 		if node.has_meta("image_path"):
 			_remove_image(node)
@@ -770,6 +786,7 @@ func _on_SingleTileConcat_pressed():
 	# GraphNodeの設定
 	# メタ情報をつける
 	res_graph_node.set_meta("multi_single", "")
+	res_graph_node.set_meta("image_path", "")
 	res_graph_node.add_stylebox_override("selectedframe",selected_multi_single_graph_node_stylebox)
 	res_graph_node.set_script(graph_node_image_script)
 	_graph.add_child(res_graph_node)
@@ -834,11 +851,13 @@ func _on_AutoTileRecog_pressed():
 			image = TontokoImage.concat_image_right(image,selected_nodes[count].get_child(0).texture.get_data())
 			count = count + 1
 		res_graph_node.set_meta("auto_tile", "3x1")
+		res_graph_node.set_meta("image_path", "")
 	elif is_1_3_tile:
 		for y in range(0,3):
 			image = TontokoImage.concat_image_bottom(image,selected_nodes[count].get_child(0).texture.get_data())
 			count = count + 1
 		res_graph_node.set_meta("auto_tile", "1x3")
+		res_graph_node.set_meta("image_path", "")
 	elif is_3_2_tile:
 		for y in range(0,2):
 			var row = Image.new()
@@ -847,6 +866,7 @@ func _on_AutoTileRecog_pressed():
 				count = count + 1
 			image = TontokoImage.concat_image_bottom(image,row)
 		res_graph_node.set_meta("auto_tile", "3x2")
+		res_graph_node.set_meta("image_path", "")
 #		print("3*2 finished")
 	elif is_3_3_tile:
 		# 結合する
@@ -858,6 +878,7 @@ func _on_AutoTileRecog_pressed():
 			image = TontokoImage.concat_image_bottom(image,row)
 		# メタ情報をつける
 		res_graph_node.set_meta("auto_tile", "3x3")
+		res_graph_node.set_meta("image_path", "")
 	elif is_3_3_donut_tile:
 		# 真ん中に置く透明Imageを作る
 		var image_transpa = Image.new()
@@ -877,6 +898,7 @@ func _on_AutoTileRecog_pressed():
 			image = TontokoImage.concat_image_bottom(image,row)
 		# メタ情報をつける
 		res_graph_node.set_meta("auto_tile", "3x3")
+		res_graph_node.set_meta("image_path", "")
 	else:
 		_show_error("オートタイルは3*1、1*3、3*2、3*3、3*3真ん中穴のみ対応しています。")
 		return
@@ -913,9 +935,14 @@ func _remove_image(node:GraphNode) -> void:
 		_graph.remove_child(node)
 
 func _on_ButtonExport_pressed():
+	var tileset_dir:String = $VBoxC/MarginC/Footer/GridContainer_Dir/LineEditTileSetDirName.text
+	tileset_dir = tileset_dir.trim_suffix('/')
+	var png_dir = $VBoxC/MarginC/Footer/GridContainer_Dir/LineEditPNGName.text
+	png_dir = png_dir.trim_suffix('/')
 	var tileset_name = $VBoxC/MarginC/Footer/GridContainer/LineEditTileSetName.text
-	var png_name = $VBoxC/MarginC/Footer/GridContainer/LineEditTileSetName_2.text
-	
+	var png_name = $VBoxC/MarginC/Footer/GridContainer/LineEditPNGName.text
+	var tileset_path = tileset_dir + '/' + tileset_name + '.tres'
+	var png_path = png_dir + '/' + png_name + '.png'
 	
 	var graph_nodes = _graph.get_all_graph_nodes()
 	
@@ -1050,25 +1077,25 @@ func _on_ButtonExport_pressed():
 		
 		new_tile_id = new_tile_id + 1
 	# くっつけた画像を保存する
-	export_image.save_png(png_name)
+	export_image.save_png(png_path)
 	
 	# tres保存→文字列取得→削除→取得した文字列置換→tres(text)作成
 	var dir = Directory.new()
 	var file = File.new()
-	if file.file_exists(tileset_name):
-		dir.remove(tileset_name)
-	ResourceSaver.save(tileset_name ,merged_tileset,ResourceSaver.FLAG_RELATIVE_PATHS)
+	if file.file_exists(tileset_path):
+		dir.remove(tileset_path)
+	ResourceSaver.save(tileset_path ,merged_tileset,ResourceSaver.FLAG_RELATIVE_PATHS)
 	
 	# 保存したtresをテキストで開いてダミー画像パスを置換する
-	file.open(tileset_name,File.READ)
+	file.open(tileset_path,File.READ)
 	var tres_str = file.get_as_text()
 	file.close()
 	# ファイル削除
-	dir.remove(tileset_name)
+	dir.remove(tileset_path)
 	
 	# tres(text)作成
-	file.open(tileset_name,File.WRITE_READ)
-	file.store_string(tres_str.replace("res://addons/tontoko_tileset/dummy.png",png_name))
+	file.open(tileset_path,File.WRITE_READ)
+	file.store_string(tres_str.replace("res://addons/tontoko_tileset/dummy.png",png_path))
 	file.close()
 	
 func _set_painted_1_tile(offset:Vector2,tileset:TileSet,id:int) -> void:
@@ -1351,13 +1378,18 @@ func translate():
 	$VBoxC/MarginC/Footer/VBoxContainer/GridContainer/SpinBoxZIndexHoshi2.hint_tooltip = translation.hint_tooltip_en_020
 	
 	$VBoxC/MarginC/Footer/CheckButtonBgExportTransparent.text = translation.text_en_024
-	$VBoxC/MarginC/Footer/GridContainer/LabelTileSetName.text = translation.text_en_025
-	$VBoxC/MarginC/Footer/GridContainer/LabelTileSetName_2.text = translation.text_en_026
+	$VBoxC/MarginC/Footer/GridContainer_Dir/LabelTileSetName.text = translation.text_en_025
+	$VBoxC/MarginC/Footer/GridContainer_Dir/LabelPNGName.text = translation.text_en_026
+	$VBoxC/MarginC/Footer/GridContainer/LabelTileSetName.text = translation.text_en_032
+	$VBoxC/MarginC/Footer/GridContainer/LabelPNGName.text = translation.text_en_033
 	$VBoxC/MarginC/Footer/PanelC/ButtonExport.text = translation.text_en_027
 	$MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCSetumei/Label.text = translation.text_en_016
 	$MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCSetumei2/Label.text = translation.text_en_028
 	$MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCCell/HBoxCCell/Label.text = translation.text_en_029
 	$MarginC_Setting/PopupDialogSetting/VBoxContainer/MarginCAuto_2/ButtonSettingClose.text = translation.text_en_031
+
+
+
 
 
 

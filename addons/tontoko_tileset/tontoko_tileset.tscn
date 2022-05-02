@@ -193,7 +193,7 @@ theme = ExtResource( 26 )
 script = ExtResource( 2 )
 
 [node name="Panel" type="Panel" parent="."]
-margin_right = 1292.0
+margin_right = 1417.0
 margin_bottom = 720.0
 
 [node name="Label" type="Label" parent="Panel"]
@@ -206,7 +206,7 @@ align = 1
 valign = 1
 
 [node name="VBoxC" type="VBoxContainer" parent="."]
-margin_right = 1292.0
+margin_right = 1417.0
 margin_bottom = 720.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -215,7 +215,7 @@ __meta__ = {
 }
 
 [node name="TabC" type="TabContainer" parent="VBoxC"]
-margin_right = 1292.0
+margin_right = 1417.0
 margin_bottom = 634.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -234,7 +234,7 @@ __meta__ = {
 }
 
 [node name="Main" type="HBoxContainer" parent="VBoxC/TabC/Tile"]
-margin_right = 1284.0
+margin_right = 1409.0
 margin_bottom = 588.0
 size_flags_vertical = 3
 
@@ -292,7 +292,6 @@ margin_top = 68.0
 margin_right = 196.0
 margin_bottom = 94.0
 hint_tooltip = "if image is over canvas size, canvas size change over."
-pressed = true
 text = "キャンバスサイズ自動調整"
 __meta__ = {
 "_editor_description_": ""
@@ -479,7 +478,6 @@ margin_bottom = 57.0
 custom_constants/separation = 5
 
 [node name="Maru" type="Button" parent="VBoxC/TabC/Tile/Main/Tools/HBoxC/MC/VBoxC"]
-margin_top = 121.0
 margin_top = 69.0
 margin_right = 40.0
 margin_bottom = 109.0
@@ -1134,13 +1132,13 @@ coord = Vector2( 0.75, 0.75 )
 
 [node name="VBoxC" type="VBoxContainer" parent="VBoxC/TabC/Tile/Main"]
 margin_left = 328.0
-margin_right = 1284.0
+margin_right = 1409.0
 margin_bottom = 588.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxC" type="HBoxContainer" parent="VBoxC/TabC/Tile/Main/VBoxC"]
-margin_right = 956.0
+margin_right = 1081.0
 margin_bottom = 28.0
 custom_constants/separation = 12
 
@@ -1176,7 +1174,7 @@ margin_right = 106.0
 margin_bottom = 28.0
 min_value = 1.0
 max_value = 16384.0
-value = 10.0
+value = 8.0
 align = 1
 
 [node name="LabelPxOrCell" type="Label" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCWidth"]
@@ -1203,7 +1201,7 @@ margin_right = 106.0
 margin_bottom = 28.0
 min_value = 1.0
 max_value = 16384.0
-value = 10.0
+value = 1.0
 align = 1
 
 [node name="LabelPxOrCell" type="Label" parent="VBoxC/TabC/Tile/Main/VBoxC/HBoxC/HBoxCHeight"]
@@ -1269,7 +1267,7 @@ color = Color( 1, 0, 0, 0.435294 )
 
 [node name="Grid" type="PanelContainer" parent="VBoxC/TabC/Tile/Main/VBoxC"]
 margin_top = 32.0
-margin_right = 956.0
+margin_right = 1081.0
 margin_bottom = 588.0
 rect_clip_content = true
 size_flags_horizontal = 3
@@ -1278,7 +1276,7 @@ size_flags_vertical = 3
 [node name="GraphEditImage" type="GraphEdit" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 949.0
+margin_right = 1074.0
 margin_bottom = 549.0
 mouse_filter = 1
 size_flags_horizontal = 3
@@ -1288,7 +1286,7 @@ custom_colors/grid_major = Color( 1, 0, 0, 1 )
 custom_colors/grid_minor = Color( 1, 0, 0, 0.45098 )
 custom_styles/bg = SubResource( 3 )
 scroll_offset = Vector2( -64, -64 )
-snap_distance = 32
+snap_distance = 48
 show_zoom_label = true
 minimap_enabled = false
 script = ExtResource( 3 )
@@ -1297,13 +1295,13 @@ __meta__ = {
 }
 _graph_edit_paint_path = NodePath("../GraphEditPaint")
 _graph_edit_mark_path = NodePath("../GraphEditMark")
-CellSize = 32
+CellSize = 48
 
 [node name="GridCanvas" type="ColorRect" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditImage"]
 margin_left = 64.0
 margin_top = 64.0
-margin_right = 384.0
-margin_bottom = 384.0
+margin_right = 448.0
+margin_bottom = 112.0
 mouse_filter = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -1312,9 +1310,9 @@ color = Color( 0.729412, 0.729412, 0.729412, 0.423529 )
 [node name="GraphNodeCursor" type="GraphNode" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditImage"]
 margin_left = 64.0
 margin_top = 64.0
-margin_right = 96.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 32, 32 )
+margin_right = 112.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 48, 48 )
 mouse_filter = 1
 custom_styles/selectedframe = ExtResource( 25 )
 slot/0/left_enabled = false
@@ -1326,8 +1324,9 @@ slot/0/right_color = Color( 1, 1, 1, 1 )
 script = ExtResource( 5 )
 
 [node name="TextureRect" type="TextureRect" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditImage/GraphNodeCursor"]
-margin_right = 32.0
-margin_bottom = 32.0
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 11 )
@@ -1342,7 +1341,7 @@ anims/animation = SubResource( 2 )
 [node name="GraphEditMark" type="GraphEdit" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 949.0
+margin_right = 1074.0
 margin_bottom = 549.0
 mouse_filter = 2
 size_flags_horizontal = 3
@@ -1350,7 +1349,7 @@ size_flags_vertical = 3
 theme = ExtResource( 26 )
 custom_styles/bg = SubResource( 3 )
 scroll_offset = Vector2( -64, -64 )
-snap_distance = 32
+snap_distance = 48
 show_zoom_label = true
 minimap_enabled = false
 script = ExtResource( 4 )
@@ -1363,12 +1362,12 @@ mark_node_dic = {
 }
 mark_cell_dic = {
 }
-CellSize = 32
+CellSize = 48
 
 [node name="GraphEditPaint" type="GraphEdit" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 949.0
+margin_right = 1074.0
 margin_bottom = 549.0
 mouse_filter = 2
 size_flags_horizontal = 3
@@ -1376,7 +1375,7 @@ size_flags_vertical = 3
 theme = ExtResource( 26 )
 custom_styles/bg = SubResource( 3 )
 scroll_offset = Vector2( -64, -64 )
-snap_distance = 32
+snap_distance = 48
 show_zoom_label = true
 minimap_enabled = false
 script = ExtResource( 18 )
@@ -1385,7 +1384,7 @@ __meta__ = {
 }
 _graph_edit_image_path = NodePath("../GraphEditImage")
 _graph_edit_mark_path = NodePath("../GraphEditMark")
-CellSize = 32
+CellSize = 48
 
 [node name="TopLeftGraphNode" type="GraphNode" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditPaint"]
 visible = false
@@ -1430,7 +1429,7 @@ __meta__ = {
 [node name="ContainerGridRect" type="Container" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 949.0
+margin_right = 1074.0
 margin_bottom = 549.0
 mouse_filter = 2
 size_flags_horizontal = 3
@@ -1438,14 +1437,14 @@ size_flags_vertical = 3
 
 [node name="ColorRectX" type="ColorRect" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/ContainerGridRect"]
 margin_top = 64.0
-margin_right = 942.0
+margin_right = 1067.0
 margin_bottom = 65.0
 mouse_filter = 2
 
 [node name="ColorRectX2" type="ColorRect" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/ContainerGridRect"]
-margin_top = 384.0
-margin_right = 942.0
-margin_bottom = 385.0
+margin_top = 112.0
+margin_right = 1067.0
+margin_bottom = 113.0
 mouse_filter = 2
 
 [node name="ColorRectY" type="ColorRect" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/ContainerGridRect"]
@@ -1455,8 +1454,8 @@ margin_bottom = 542.0
 mouse_filter = 2
 
 [node name="ColorRectY2" type="ColorRect" parent="VBoxC/TabC/Tile/Main/VBoxC/Grid/ContainerGridRect"]
-margin_left = 383.0
-margin_right = 384.0
+margin_left = 447.0
+margin_right = 448.0
 margin_bottom = 542.0
 mouse_filter = 2
 
@@ -1469,7 +1468,7 @@ margin_bottom = -4.0
 
 [node name="MarginC" type="MarginContainer" parent="VBoxC"]
 margin_top = 638.0
-margin_right = 1292.0
+margin_right = 1417.0
 margin_bottom = 720.0
 custom_constants/margin_right = 4
 custom_constants/margin_top = 3
@@ -1479,7 +1478,7 @@ custom_constants/margin_bottom = 4
 [node name="Panel" type="Panel" parent="VBoxC/MarginC"]
 margin_left = 4.0
 margin_top = 3.0
-margin_right = 1288.0
+margin_right = 1413.0
 margin_bottom = 78.0
 rect_min_size = Vector2( 0, 40 )
 size_flags_horizontal = 3
@@ -1488,13 +1487,12 @@ size_flags_vertical = 3
 [node name="Footer" type="HBoxContainer" parent="VBoxC/MarginC"]
 margin_left = 4.0
 margin_top = 3.0
-margin_right = 1288.0
+margin_right = 1413.0
 margin_bottom = 78.0
 alignment = 1
 
 [node name="ButtonSetting" type="Button" parent="VBoxC/MarginC/Footer"]
-margin_left = 42.0
-margin_right = 152.0
+margin_right = 110.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 110, 28 )
 text = "タイル設定"
@@ -1502,14 +1500,14 @@ icon = ExtResource( 12 )
 expand_icon = true
 
 [node name="VSeparator" type="VSeparator" parent="VBoxC/MarginC/Footer"]
-margin_left = 156.0
-margin_right = 172.0
+margin_left = 114.0
+margin_right = 130.0
 margin_bottom = 75.0
 custom_constants/separation = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxC/MarginC/Footer"]
-margin_left = 176.0
-margin_right = 488.0
+margin_left = 134.0
+margin_right = 446.0
 margin_bottom = 75.0
 custom_constants/separation = -5
 
@@ -1613,28 +1611,69 @@ value = 1.0
 align = 1
 
 [node name="VSeparator2" type="VSeparator" parent="VBoxC/MarginC/Footer"]
-margin_left = 492.0
-margin_right = 504.0
+margin_left = 450.0
+margin_right = 462.0
 margin_bottom = 75.0
 custom_constants/separation = 12
 
 [node name="CheckButtonBgExportTransparent" type="CheckButton" parent="VBoxC/MarginC/Footer"]
-margin_left = 508.0
-margin_right = 770.0
+margin_left = 466.0
+margin_right = 672.0
 margin_bottom = 75.0
 pressed = true
-text = "キャンバス背景は透明で出力"
+text = "キャンバス背景透明"
 align = 2
 
 [node name="VSeparator3" type="VSeparator" parent="VBoxC/MarginC/Footer"]
-margin_left = 774.0
-margin_right = 786.0
+margin_left = 676.0
+margin_right = 688.0
 margin_bottom = 75.0
 custom_constants/separation = 12
 
+[node name="GridContainer_Dir" type="GridContainer" parent="VBoxC/MarginC/Footer"]
+margin_left = 692.0
+margin_right = 995.0
+margin_bottom = 75.0
+custom_constants/vseparation = 7
+custom_constants/hseparation = 0
+columns = 2
+
+[node name="LabelTileSetDirName" type="Label" parent="VBoxC/MarginC/Footer/GridContainer_Dir"]
+margin_top = 8.0
+margin_right = 103.0
+margin_bottom = 26.0
+text = "TileSet 出力Dir:"
+align = 2
+valign = 1
+
+[node name="LineEditTileSetDirName" type="LineEdit" parent="VBoxC/MarginC/Footer/GridContainer_Dir"]
+margin_left = 103.0
+margin_right = 303.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 200, 22 )
+custom_fonts/font = ExtResource( 29 )
+text = "res://scene/map/tileset/"
+
+[node name="LabelPNGDirName" type="Label" parent="VBoxC/MarginC/Footer/GridContainer_Dir"]
+margin_top = 49.0
+margin_right = 103.0
+margin_bottom = 67.0
+text = "PNG 出力Dir:"
+align = 2
+valign = 1
+
+[node name="LineEditPNGName" type="LineEdit" parent="VBoxC/MarginC/Footer/GridContainer_Dir"]
+margin_left = 103.0
+margin_top = 41.0
+margin_right = 303.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 200, 22 )
+custom_fonts/font = ExtResource( 29 )
+text = "res://scene/map/sprite/"
+
 [node name="GridContainer" type="GridContainer" parent="VBoxC/MarginC/Footer"]
-margin_left = 790.0
-margin_right = 1102.0
+margin_left = 999.0
+margin_right = 1269.0
 margin_bottom = 75.0
 custom_constants/vseparation = 7
 custom_constants/hseparation = 0
@@ -1642,46 +1681,46 @@ columns = 2
 
 [node name="LabelTileSetName" type="Label" parent="VBoxC/MarginC/Footer/GridContainer"]
 margin_top = 8.0
-margin_right = 112.0
+margin_right = 120.0
 margin_bottom = 26.0
-text = "TileSet 出力パス:"
+text = "Tilesetファイル名:"
 align = 2
 valign = 1
 
 [node name="LineEditTileSetName" type="LineEdit" parent="VBoxC/MarginC/Footer/GridContainer"]
-margin_left = 112.0
-margin_right = 312.0
+margin_left = 120.0
+margin_right = 270.0
 margin_bottom = 34.0
-rect_min_size = Vector2( 200, 22 )
+rect_min_size = Vector2( 150, 22 )
 custom_fonts/font = ExtResource( 29 )
-text = "res://output_tileset.tres"
+text = "output_tileset"
 
-[node name="LabelTileSetName_2" type="Label" parent="VBoxC/MarginC/Footer/GridContainer"]
+[node name="LabelPNGName" type="Label" parent="VBoxC/MarginC/Footer/GridContainer"]
 margin_top = 49.0
-margin_right = 112.0
+margin_right = 120.0
 margin_bottom = 67.0
-text = "PNG 出力パス:"
+text = "PNGファイル名:"
 align = 2
 valign = 1
 
-[node name="LineEditTileSetName_2" type="LineEdit" parent="VBoxC/MarginC/Footer/GridContainer"]
-margin_left = 112.0
+[node name="LineEditPNGName" type="LineEdit" parent="VBoxC/MarginC/Footer/GridContainer"]
+margin_left = 120.0
 margin_top = 41.0
-margin_right = 312.0
+margin_right = 270.0
 margin_bottom = 75.0
-rect_min_size = Vector2( 200, 22 )
+rect_min_size = Vector2( 150, 22 )
 custom_fonts/font = ExtResource( 29 )
-text = "res://output_tileset.png"
+text = "output_tileset"
 
 [node name="VSeparator4" type="VSeparator" parent="VBoxC/MarginC/Footer"]
-margin_left = 1106.0
-margin_right = 1118.0
+margin_left = 1273.0
+margin_right = 1285.0
 margin_bottom = 75.0
 custom_constants/separation = 12
 
 [node name="PanelC" type="MarginContainer" parent="VBoxC/MarginC/Footer"]
-margin_left = 1122.0
-margin_right = 1242.0
+margin_left = 1289.0
+margin_right = 1409.0
 margin_bottom = 75.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1697,21 +1736,21 @@ text = "出力！"
 
 [node name="MarginC" type="MarginContainer" parent="."]
 visible = false
-margin_right = 1292.0
+margin_right = 1417.0
 margin_bottom = 720.0
 
 [node name="FileDialog" type="FileDialog" parent="MarginC"]
-margin_right = 1292.0
+margin_right = 1417.0
 margin_bottom = 720.0
 window_title = "ファイルを開く"
 resizable = true
 mode = 1
-filters = PoolStringArray( "*.png ;", "*.png ;", "*.png ;" )
+filters = PoolStringArray( "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;", "*.png ;" )
 show_hidden_files = true
 
 [node name="MarginC_Setting" type="MarginContainer" parent="."]
 visible = false
-margin_right = 1292.0
+margin_right = 1417.0
 margin_bottom = 720.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1724,7 +1763,7 @@ custom_constants/margin_bottom = 120
 [node name="PopupDialogSetting" type="PopupDialog" parent="MarginC_Setting"]
 margin_left = 120.0
 margin_top = 120.0
-margin_right = 1172.0
+margin_right = 1297.0
 margin_bottom = 600.0
 popup_exclusive = true
 
@@ -1880,7 +1919,7 @@ rect_min_size = Vector2( 0, 60 )
 text = "Close"
 
 [node name="PopupDialogMessage" type="PopupDialog" parent="."]
-margin_right = 1292.0
+margin_right = 1417.0
 margin_bottom = 720.0
 mouse_filter = 2
 size_flags_horizontal = 3
@@ -1942,6 +1981,8 @@ __meta__ = {
 [connection signal="release_drag_rect_right" from="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditPaint" to="." method="_on_Grid_release_drag_rect_right"]
 [connection signal="scroll_offset_changed" from="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditPaint" to="VBoxC/TabC/Tile/Main/VBoxC/Grid/GraphEditPaint" method="_on_GraphEditPaint_scroll_offset_changed"]
 [connection signal="pressed" from="VBoxC/MarginC/Footer/ButtonSetting" to="." method="_on_ButtonSetting_pressed"]
+[connection signal="text_changed" from="VBoxC/MarginC/Footer/GridContainer_Dir/LineEditTileSetDirName" to="." method="_on_LineEditTileSetDirName_text_changed"]
+[connection signal="text_changed" from="VBoxC/MarginC/Footer/GridContainer_Dir/LineEditPNGName" to="." method="_on_LineEditPNGName_text_changed"]
 [connection signal="pressed" from="VBoxC/MarginC/Footer/PanelC/ButtonExport" to="." method="_on_ButtonExport_pressed"]
 [connection signal="files_selected" from="MarginC/FileDialog" to="." method="_on_FileDialog_files_selected"]
 [connection signal="popup_hide" from="MarginC/FileDialog" to="." method="_on_FileDialog_popup_hide"]
