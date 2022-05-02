@@ -54,6 +54,11 @@ pngファイルを読み込み（複数可）、タイルセットのtresファ�
 ### インストール方法
 tontoko_tile を addons ディレクトリに配置します。<br>プロジェクト設定→プラグインから TontokoTile を有効化します。<br>その後プロジェクトを再起動してアドオンを反映させます。
 
+### ポイント
+* 幅を狭めに作ったほうがパレットが使いやすい
+* セーブ機能がないので画像が大きすぎるとミスするので小さめのtilesetを複数作る
+  * [merge-tileset](https://github.com/folt-a/godot3-batch-commands)あとでTileSetをマージするのもあり。
+
 **[⇓使い方（日本語）](https://github.com/folt-a/tontoko_tile#%E4%BD%BF%E3%81%84%E6%96%B9)** ドキュメントはアドオン内でもみれます
 
 ---
