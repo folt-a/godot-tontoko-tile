@@ -953,129 +953,64 @@ func _on_ButtonExport_pressed():
 	
 	# Tilesetも作成
 	var merged_tileset:TileSet = TileSet.new()
-	var file_index:int = 0
+	
 	var new_tile_id:int = 0
 	# ダミー画像をTileSetのテクスチャの外部リソースとして設定する。（終了後にテキスト置換で変える）
 	var ext_resource = load("res://addons/tontoko_tileset/dummy.png")
 	
-	for node_ in graph_nodes:
-		var node:GraphNode = node_
-		
-		if GridCanvasSize.y <= node.offset.y:
-			# 左上から右下なのでYが範囲外なら終了
-			break
-		if GridCanvasSize.x <= node.offset.x:
-			# 左上から右下なのでXが範囲外なら次のマスへ
-			continue
-		
-		var src:Image= node.get_child(0).texture.get_data()
-		src.convert(Image.FORMAT_RGBA8)
-		export_image.blit_rect(src,Rect2(0,0,src.get_width(),src.get_height()),Vector2(node.offset.x, node.offset.y))
-		
-		# Tileset
-		merged_tileset.create_tile(new_tile_id)
-		merged_tileset.tile_set_name(new_tile_id,"tile" + String(new_tile_id))
-		merged_tileset.tile_set_texture(new_tile_id,ext_resource)
-		merged_tileset.tile_set_modulate(new_tile_id,Color(1,1,1,1))
-		merged_tileset.tile_set_region(new_tile_id,Rect2(node.offset,src.get_size()))
+	if false:
+		for node_ in graph_nodes:
+			var node:GraphNode = node_
+			
+			if GridCanvasSize.y <= node.offset.y:
+				# 左上から右下なのでYが範囲外なら終了
+				break
+			if GridCanvasSize.x <= node.offset.x:
+				# 左上から右下なのでXが範囲外なら次のマスへ
+				continue
+			
+			var src:Image= node.get_child(0).texture.get_data()
+			src.convert(Image.FORMAT_RGBA8)
+			export_image.blit_rect(src,Rect2(0,0,src.get_width(),src.get_height()),Vector2(node.offset.x, node.offset.y))
+			
+			_create_tile(merged_tileset,new_tile_id,ext_resource,node,src,false)
 
-		if node.has_meta("auto_tile") and node.get_meta("auto_tile") == "wolf":
-			# オートタイルウディタツクール
-			merged_tileset.tile_set_tile_mode(new_tile_id,TileSet.AUTO_TILE)
-			merged_tileset.autotile_set_bitmask_mode(new_tile_id,TileSet.BITMASK_3X3_MINIMAL)
-			for index in range(0,BITMASK_AUTO_TILE_W_AND_T.size()):
-				if index % 2 == 0:
-					continue
+			new_tile_id = new_tile_id + 1
+	else:
+		var auto_and_multi_single_nodes = []
+		# なにもないセルをシングルタイルにする
+		for y in range(0,(GridCanvasSize.y / CellSize)) :
+			for x in range(0,(GridCanvasSize.x / CellSize)) :
+				var node:GraphNode = _graph.get_node_at_or_null(Vector2(x * CellSize, y * CellSize))
+				if node != null and (node.has_meta('auto_tile') or node.has_meta('multi_single')):
+					# オートタイル、複数シングルタイルは最後に追加する
+					auto_and_multi_single_nodes.append(node)
+					# シングルタイル埋めはする
+					_create_empty_tile(merged_tileset,new_tile_id,ext_resource,Vector2(x * CellSize, y * CellSize))
+				elif node != null:
+					var src:Image= node.get_child(0).texture.get_data()
+					src.convert(Image.FORMAT_RGBA8)
+					export_image.blit_rect(src,Rect2(0,0,src.get_width(),src.get_height()),Vector2(node.offset.x, node.offset.y))
+					_create_tile(merged_tileset,new_tile_id,ext_resource,node,src,false)
 				else:
-					merged_tileset.autotile_set_bitmask(new_tile_id,BITMASK_AUTO_TILE_W_AND_T[index - 1],BITMASK_AUTO_TILE_W_AND_T[index])
-			merged_tileset.autotile_set_icon_coordinate(new_tile_id,Vector2(5, 7))
-			merged_tileset.autotile_set_size(new_tile_id,Vector2(CellSize,CellSize))
-			
-			var shapes = _edit_painted_tile_autotiles(node.offset,merged_tileset,new_tile_id,src)
-			merged_tileset.tile_set_shapes(new_tile_id,shapes)
-			
-			# LIGHT OCCLUDER TODO
-			# subtile_priority TODO RANDOM?
-			
-		elif node.has_meta("auto_tile") and node.get_meta("auto_tile") != "wolf":
-			var auto_tile_meta = node.get_meta("auto_tile")
-			merged_tileset.tile_set_tile_mode(new_tile_id,TileSet.AUTO_TILE)
-			merged_tileset.autotile_set_bitmask_mode(new_tile_id,TileSet.BITMASK_3X3_MINIMAL)
-			var bitmask_array:Array
-			match auto_tile_meta:
-				"3x1":
-					bitmask_array = BITMASK_AUTO_TILE_3X1
-				"1x3":
-					bitmask_array = BITMASK_AUTO_TILE_1X3
-				"3x2":
-					bitmask_array = BITMASK_AUTO_TILE_3X2
-#				"2x3":
-#					bitmask_array = BITMASK_AUTO_TILE_2X3
-				"3x3":
-					bitmask_array = BITMASK_AUTO_TILE_3X3
-					
-			for index in range(0,bitmask_array.size()):
-				if index % 2 == 0:continue
-				merged_tileset.autotile_set_bitmask(new_tile_id,bitmask_array[index - 1],bitmask_array[index])
-			# Iconは左上（初期位置）
-			
-			merged_tileset.autotile_set_size(new_tile_id,Vector2(CellSize,CellSize))
-			
-			var shapes = _edit_painted_tile_autotiles(node.offset,merged_tileset,new_tile_id,src)
-			merged_tileset.tile_set_shapes(new_tile_id,shapes)
+					# セルに画像がなかったらシングルタイル埋め
+					_create_empty_tile(merged_tileset,new_tile_id,ext_resource,Vector2(x * CellSize, y * CellSize))
 
-		elif node.has_meta("multi_single") and !(src.get_height() == CellSize and src.get_width() == CellSize):
-			merged_tileset.tile_set_tile_mode(new_tile_id,TileSet.SINGLE_TILE)
-			# Y=一番↓、X=真ん中が塗りセルにする？ TODO
-			# とりあえず強制グリッドにする
-#			3x3 = -32 -> -(96 / 2) + (32 / 2)  , -64 -> -96 +32
-			var vec2_offset = Vector2(-(src.get_width() / 2) + (CellSize / 2), -src.get_height() + CellSize)
-			var offset_snaped:Vector2 = _graph.get_forced_grid(vec2_offset)
-			merged_tileset.tile_set_texture_offset(new_tile_id,offset_snaped)
-#			merged_tileset.autotile_set_icon_coordinate(new_tile_id,vec2_offset / CellSize)
-			var shapes = _edit_painted_tile_autotiles(node.offset,merged_tileset,new_tile_id,src)
-			# シングルタイルはシェイプ１つでコリジョンとなるので、結合する
-			var count = 0
-			for shape in shapes:
-				# TODO 同Vector2は同インスタンスにしたい
-				var point_array:PoolVector2Array = []
-				for point in shape.shape.points:
-					# 塗ったセルぶんずらす ＋ オフセット分ずらす
-					point_array.append(point + (shape.autotile_coord * CellSize))
-				var col_shape = ConvexPolygonShape2D.new()
-				col_shape.points = point_array
-				merged_tileset.tile_set_shape(new_tile_id,count,col_shape)
-				merged_tileset.tile_set_shape_offset(new_tile_id,count,offset_snaped)
-				count = count + 1
-		else:
-			#single
-			merged_tileset.tile_set_tile_mode(new_tile_id,TileSet.SINGLE_TILE)
-#			merged_tileset.autotile_set_icon_coordinate(new_tile_id,Vector2(0, 0))
-#			merged_tileset.autotile_set_size(new_tile_id,Vector2(CellSize,CellSize))
-			# paint
-			_set_painted_1_tile(node.offset,merged_tileset,new_tile_id)
-			
-#		# 複数セルpaint
-#		if !node.has_meta("single"):
-#		# 全ますチェック
-#			for x in range(node.offset.x / CellSize,(node.offset.x + src.get_width()) / CellSize):
-#				for y in range(node.offset.y / CellSize,(node.offset.y + src.get_height()) / CellSize):
-#					pass
-#		merged_tileset.tile_set_shapes(new_tile_id,org_tileset.tile_get_shapes(org_tile_id))
-#		merged_tileset.tile_set_z_index(new_tile_id,org_tileset.tile_get_z_index(org_tile_id))
-#		merged_tileset.autotile_set_bitmask_mode(new_tile_id,org_tileset.autotile_get_bitmask_mode(org_tile_id))
-#		merged_tileset.autotile_set_spacing(new_tile_id,org_tileset.autotile_get_spacing(org_tile_id))
-
-
+				new_tile_id = new_tile_id + 1
+				pass
+			pass
 		
-#		merged_tileset.tile_set_occluder_offset(new_tile_id,org_tileset.tile_get_occluder_offset(org_tile_id))
-#		merged_tileset.tile_set_light_occluder(new_tile_id,org_tileset.tile_get_light_occluder(org_tile_id))
-#		merged_tileset.tile_set_material(new_tile_id,org_tileset.tile_get_material(org_tile_id))
-#		merged_tileset.tile_set_normal_map(new_tile_id,org_tileset.tile_get_normal_map(org_tile_id))
-#		merged_tileset.tile_set_navigation_polygon(new_tile_id,org_tileset.tile_get_navigation_polygon(org_tile_id))
-#		merged_tileset.tile_set_navigation_polygon_offset(new_tile_id,org_tileset.tile_get_navigation_polygon_offset(org_tile_id))
+		pass
 		
-		new_tile_id = new_tile_id + 1
+		# オートタイル、シングルタイルは最後に追加する
+		for node in auto_and_multi_single_nodes:
+			var src:Image= node.get_child(0).texture.get_data()
+			src.convert(Image.FORMAT_RGBA8)
+			export_image.blit_rect(src,Rect2(0,0,src.get_width(),src.get_height()),Vector2(node.offset.x, node.offset.y))
+			_create_tile(merged_tileset,new_tile_id,ext_resource,node,src,false)
+			new_tile_id = new_tile_id + 1
+			pass
+	
 	# くっつけた画像を保存する
 	export_image.save_png(png_path)
 	
@@ -1097,6 +1032,105 @@ func _on_ButtonExport_pressed():
 	file.open(tileset_path,File.WRITE_READ)
 	file.store_string(tres_str.replace("res://addons/tontoko_tileset/dummy.png",png_path))
 	file.close()
+	
+func _create_tile(merged_tileset:TileSet,new_tile_id:int,ext_resource:Texture,node,src,is_force_single:bool):
+	# Tileset
+	merged_tileset.create_tile(new_tile_id)
+	merged_tileset.tile_set_name(new_tile_id,"tile" + String(new_tile_id))
+	merged_tileset.tile_set_texture(new_tile_id,ext_resource)
+	merged_tileset.tile_set_modulate(new_tile_id,Color(1,1,1,1))
+	merged_tileset.tile_set_region(new_tile_id,Rect2(node.offset,src.get_size()))
+
+	if is_force_single:
+		#single
+		merged_tileset.tile_set_tile_mode(new_tile_id,TileSet.SINGLE_TILE)
+		_set_painted_1_tile(node.offset,merged_tileset,new_tile_id)
+	elif node.has_meta("auto_tile") and node.get_meta("auto_tile") == "wolf":
+		# オートタイルウディタツクール
+		merged_tileset.tile_set_tile_mode(new_tile_id,TileSet.AUTO_TILE)
+		merged_tileset.autotile_set_bitmask_mode(new_tile_id,TileSet.BITMASK_3X3_MINIMAL)
+		for index in range(0,BITMASK_AUTO_TILE_W_AND_T.size()):
+			if index % 2 == 0:
+				continue
+			else:
+				merged_tileset.autotile_set_bitmask(new_tile_id,BITMASK_AUTO_TILE_W_AND_T[index - 1],BITMASK_AUTO_TILE_W_AND_T[index])
+		merged_tileset.autotile_set_icon_coordinate(new_tile_id,Vector2(5, 7))
+		merged_tileset.autotile_set_size(new_tile_id,Vector2(CellSize,CellSize))
+		
+		var shapes = _edit_painted_tile_autotiles(node.offset,merged_tileset,new_tile_id,src)
+		merged_tileset.tile_set_shapes(new_tile_id,shapes)
+		
+		# LIGHT OCCLUDER TODO
+		# subtile_priority TODO RANDOM?
+		
+	elif node.has_meta("auto_tile") and node.get_meta("auto_tile") != "wolf":
+		var auto_tile_meta = node.get_meta("auto_tile")
+		merged_tileset.tile_set_tile_mode(new_tile_id,TileSet.AUTO_TILE)
+		merged_tileset.autotile_set_bitmask_mode(new_tile_id,TileSet.BITMASK_3X3_MINIMAL)
+		var bitmask_array:Array
+		match auto_tile_meta:
+			"3x1":
+				bitmask_array = BITMASK_AUTO_TILE_3X1
+			"1x3":
+				bitmask_array = BITMASK_AUTO_TILE_1X3
+			"3x2":
+				bitmask_array = BITMASK_AUTO_TILE_3X2
+#				"2x3":
+#					bitmask_array = BITMASK_AUTO_TILE_2X3
+			"3x3":
+				bitmask_array = BITMASK_AUTO_TILE_3X3
+				
+		for index in range(0,bitmask_array.size()):
+			if index % 2 == 0:continue
+			merged_tileset.autotile_set_bitmask(new_tile_id,bitmask_array[index - 1],bitmask_array[index])
+		# Iconは左上（初期位置）
+		
+		merged_tileset.autotile_set_size(new_tile_id,Vector2(CellSize,CellSize))
+		
+		var shapes = _edit_painted_tile_autotiles(node.offset,merged_tileset,new_tile_id,src)
+		merged_tileset.tile_set_shapes(new_tile_id,shapes)
+
+	elif node.has_meta("multi_single") and !(src.get_height() == CellSize and src.get_width() == CellSize):
+		merged_tileset.tile_set_tile_mode(new_tile_id,TileSet.SINGLE_TILE)
+		# Y=一番↓、X=真ん中が塗りセルにする？ TODO
+		# とりあえず強制グリッドにする
+#			3x3 = -32 -> -(96 / 2) + (32 / 2)  , -64 -> -96 +32
+		var vec2_offset = Vector2(-(src.get_width() / 2) + (CellSize / 2), -src.get_height() + CellSize)
+		var offset_snaped:Vector2 = _graph.get_forced_grid(vec2_offset)
+		merged_tileset.tile_set_texture_offset(new_tile_id,offset_snaped)
+#			merged_tileset.autotile_set_icon_coordinate(new_tile_id,vec2_offset / CellSize)
+		var shapes = _edit_painted_tile_autotiles(node.offset,merged_tileset,new_tile_id,src)
+		# シングルタイルはシェイプ１つでコリジョンとなるので、結合する
+		var count = 0
+		for shape in shapes:
+			# TODO 同Vector2は同インスタンスにしたい
+			var point_array:PoolVector2Array = []
+			for point in shape.shape.points:
+				# 塗ったセルぶんずらす ＋ オフセット分ずらす
+				point_array.append(point + (shape.autotile_coord * CellSize))
+			var col_shape = ConvexPolygonShape2D.new()
+			col_shape.points = point_array
+			merged_tileset.tile_set_shape(new_tile_id,count,col_shape)
+			merged_tileset.tile_set_shape_offset(new_tile_id,count,offset_snaped)
+			count = count + 1
+	else:
+		#single
+		merged_tileset.tile_set_tile_mode(new_tile_id,TileSet.SINGLE_TILE)
+#			merged_tileset.autotile_set_icon_coordinate(new_tile_id,Vector2(0, 0))
+#			merged_tileset.autotile_set_size(new_tile_id,Vector2(CellSize,CellSize))
+		# paint
+		_set_painted_1_tile(node.offset,merged_tileset,new_tile_id)
+
+func _create_empty_tile(merged_tileset:TileSet,new_tile_id:int,ext_resource:Texture,offset:Vector2):
+	merged_tileset.create_tile(new_tile_id)
+	merged_tileset.tile_set_name(new_tile_id,"tile" + String(new_tile_id))
+	merged_tileset.tile_set_texture(new_tile_id,ext_resource)
+	merged_tileset.tile_set_modulate(new_tile_id,Color(1,1,1,1))
+	merged_tileset.tile_set_region(new_tile_id,Rect2(offset,Vector2(CellSize,CellSize)))
+	merged_tileset.tile_set_tile_mode(new_tile_id,TileSet.SINGLE_TILE)
+	_set_painted_1_tile(offset,merged_tileset,new_tile_id)
+	pass
+
 	
 func _set_painted_1_tile(offset:Vector2,tileset:TileSet,id:int) -> void:
 	var coord = offset / CellSize
@@ -1173,6 +1207,8 @@ func _edit_painted_tile_autotiles(offset:Vector2,tileset:TileSet,id:int,image:Im
 			# マーク取得
 			# offsetがもっとも左上のマス位置なのでそれにズレ分加算する
 			var coord = (offset / CellSize) + Vector2(x,y)
+			if _graph_mark.mark_cell_dic.get(coord) == null:
+				continue
 			var paint_tex_rect:TextureRect = _graph_mark.mark_cell_dic.get(coord).get_child(0)
 			
 			if !_graph_mark.mark_cell_dic.has(coord): 

@@ -116,6 +116,12 @@ func get_cursor_cell()->Vector2:
 func set_cursor_cell(pos:Vector2)->void:
 	grid_cursor.offset = pos
 
+func get_node_at_or_null(pos:Vector2) -> GraphNode:
+	for node in get_children():
+		if node is GraphNode and node != grid_cursor and node.offset == pos:
+			return node
+	return null
+
 func get_all_graph_nodes() -> Array:
 	var tiles = []
 	for node in get_children():
