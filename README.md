@@ -32,6 +32,13 @@ Corresponding rectangular mass format 1x3, 3x1, 3x2, 3x3, 3x3 (middle hole)
 ### To install
 download it as a ZIP archive.<br>Extract and move the addons/ directory it contains into your project folder. Then, enable the plugin in project settings.<br>And reload godot editor.
 
+### Tips
+* It is easier to use TileSet Pallet if you make it Image Width narrower
+* there is no save feature. if the image is too large, you will make a mistake, so make multiple small TileSets.
+  * [merge-tileset](https://github.com/folt-a/godot3-batch-commands)You may want to merge the TileSet later.
+* There is a limit to the specifications of multiple SingleTiles, and collisions refer to those of each Cell.  
+ZIndex is one same ZIndex with one multiple SingleTile (most top left Cell)
+
 **[⇓How To Use](https://github.com/folt-a/tontoko_tile#how-to-use)** Document also in the add-on
 
 ---
@@ -58,6 +65,7 @@ tontoko_tile を addons ディレクトリに配置します。<br>プロジェ�
 * 幅を狭めに作ったほうがパレットが使いやすい
 * セーブ機能がないので画像が大きすぎるとミスするので小さめのtilesetを複数作る
   * [merge-tileset](https://github.com/folt-a/godot3-batch-commands)あとでTileSetをマージするのもあり。
+* 複数シングルタイルには仕様上の限界があり、コリジョンは各マスのものを参照するが、ZIndexは複数シングルタイル1枚で1つの同じZIndexになる（左上のマス）ので注意。
 
 **[⇓使い方（日本語）](https://github.com/folt-a/tontoko_tile#%E4%BD%BF%E3%81%84%E6%96%B9)** ドキュメントはアドオン内でもみれます
 
