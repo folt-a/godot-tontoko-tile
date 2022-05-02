@@ -491,6 +491,7 @@ func _setting_restore() -> void:
 			HalfCellSize = int(data.cell_size) / 2
 			_graph.CellSize = CellSize
 			_graph_mark.CellSize = CellSize
+			_graph_paint.CellSize = CellSize
 			_graph.snap_distance = CellSize
 			_graph_mark.snap_distance = CellSize
 			_graph_paint.snap_distance = CellSize
