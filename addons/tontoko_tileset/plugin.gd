@@ -4,9 +4,11 @@ extends EditorPlugin
 var tontoko_tileset
 var tontoko_tileset_path = "res://addons/tontoko_tileset/tontoko_tileset.tscn"
 var tontoko_tileset_save_path = "res://addons/tontoko_tileset/tontoko_tileset_save.tscn"
+var S # translation singleton
 
 func _enter_tree():
 	
+	S = load("res://addons/tontoko_tileset/tontoko_strings.gd").get_translation_singleton(self)
 	get_tree().set_meta("__editor_interface", get_editor_interface())
 	get_tree().set_meta("__undo_redo", get_undo_redo())
 	
