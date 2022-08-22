@@ -1414,8 +1414,8 @@ func translate():
 	$VBoxC/MarginC/Footer/VBoxContainer/GridContainer/SpinBoxZIndexHoshi2.hint_tooltip = translation.hint_tooltip_en_020
 	
 	$VBoxC/MarginC/Footer/CheckButtonBgExportTransparent.text = translation.text_en_024
-	$VBoxC/MarginC/Footer/GridContainer_Dir/LabelTileSetName.text = translation.text_en_025
-	$VBoxC/MarginC/Footer/GridContainer_Dir/LabelPNGName.text = translation.text_en_026
+	$VBoxC/MarginC/Footer/GridContainer_Dir/LabelTileSetDirName.text = translation.text_en_025
+	$VBoxC/MarginC/Footer/GridContainer_Dir/LabelPNGDirName.text = translation.text_en_026
 	$VBoxC/MarginC/Footer/GridContainer/LabelTileSetName.text = translation.text_en_032
 	$VBoxC/MarginC/Footer/GridContainer/LabelPNGName.text = translation.text_en_033
 	$VBoxC/MarginC/Footer/PanelC/ButtonExport.text = translation.text_en_027
