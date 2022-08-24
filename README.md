@@ -13,6 +13,9 @@
 ---
 英語 (English)
 
+**I am working towards Godot 4.**
+**I plan to remove the feature to move and reorder tile images.**
+
 **Tontoko Tile Supports English/Japanese GUI**
 
 Tontoko Tile is godot addon that makes it easy to create Godot Tileset.
@@ -43,6 +46,10 @@ ZIndex is one same ZIndex with one multiple SingleTile (most top left Cell)
 
 ---
 日本語 (Japanese)
+
+**Godot4用に作り直し中です。**
+**タイル画像の移動と並び替えの機能は削除する予定です。**
+（Godotエディタじゃなくて画像ソフトでやった方がいいな……ってなりました）
 
 とんとこタイルはGodotのタイルセットをかんたんに作るアドオンです。
 
