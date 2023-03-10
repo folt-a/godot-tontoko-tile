@@ -1,11 +1,13 @@
 # Tontoko Tile - Godot TileSet Easy Maker
 
 **This Addon is Godot3.X, outdated. Godot4 version is under developping.**
+
 このアドオンはGodot3用です。現行のGodot4版は現在開発中です。
 
 ![image-20220425004254572](https://github.com/folt-a/tontoko_tile/blob/master/addons/tontoko_tileset/help/image-20220425004254572.png)
 
 **This Addon is Godot3.X, outdated. Godot4 version is under developping.**
+
 このアドオンはGodot3用です。現行のGodot4版は現在開発中です。
 
 オートタイルはこんな感じに作るよ動画　AutoTile Movie!
